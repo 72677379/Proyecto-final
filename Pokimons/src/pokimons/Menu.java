@@ -41,7 +41,7 @@ public class Menu extends javax.swing.JFrame {
         pok2 = new javax.swing.JRadioButton();
         pok3 = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
-        jtbHombre = new javax.swing.JRadioButton();
+        jbtHombre = new javax.swing.JRadioButton();
         jbtMujer = new javax.swing.JRadioButton();
         bBatalla = new javax.swing.JButton();
 
@@ -98,8 +98,8 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        sexo.add(jtbHombre);
-        jtbHombre.setText("Hombre");
+        sexo.add(jbtHombre);
+        jbtHombre.setText("Hombre");
 
         sexo.add(jbtMujer);
         jbtMujer.setText("Mujer");
@@ -112,14 +112,14 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(95, 95, 95)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbtMujer)
-                    .addComponent(jtbHombre))
+                    .addComponent(jbtHombre))
                 .addContainerGap(230, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jtbHombre)
+                .addComponent(jbtHombre)
                 .addGap(18, 18, 18)
                 .addComponent(jbtMujer)
                 .addContainerGap(18, Short.MAX_VALUE))
@@ -203,6 +203,15 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bBatallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBatallaActionPerformed
+        Entrenador entrenador = new Entrenador();
+        
+        entrenador.txtVaron.setText(txtNombre.getText());
+       
+        if(jbtHombre.isSelected() && pok1.isSelected()){
+            entrenador.setVisible(true);
+        }
+        
+        
         
     }//GEN-LAST:event_bBatallaActionPerformed
 
@@ -251,8 +260,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButton jbtHombre;
     private javax.swing.JRadioButton jbtMujer;
-    private javax.swing.JRadioButton jtbHombre;
     private javax.swing.JRadioButton pok1;
     private javax.swing.JRadioButton pok2;
     private javax.swing.JRadioButton pok3;
