@@ -230,7 +230,7 @@
                   <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jbtMujer" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtbHombre" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbtHombre" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="230" max="32767" attributes="0"/>
               </Group>
@@ -240,7 +240,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="jtbHombre" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtHombre" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jbtMujer" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
@@ -249,7 +249,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JRadioButton" name="jtbHombre">
+        <Component class="javax.swing.JRadioButton" name="jbtHombre">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="sexo"/>
