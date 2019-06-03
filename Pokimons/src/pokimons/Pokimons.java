@@ -6,7 +6,7 @@ public class Pokimons {
        Menu menu = new Menu();
           menu.setVisible(true);
           
-          //cfydcfgxftgxdftxdftcftcftcftcftcftcftcftcftc
+          
     }
     
 }
