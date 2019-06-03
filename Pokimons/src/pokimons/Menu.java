@@ -203,9 +203,9 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bBatallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBatallaActionPerformed
-        Entrenador entrenador = new Entrenador();
+        Entrenador1 entrenador = new Entrenador1();
         
-        entrenador.txtVaron.setText(txtNombre.getText());
+        //entrenador.txtVaron.setText(txtNombre.getText());
        
         if(jbtHombre.isSelected() && pok1.isSelected()){
             entrenador.setVisible(true);
