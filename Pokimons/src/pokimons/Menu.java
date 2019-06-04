@@ -204,11 +204,21 @@ public class Menu extends javax.swing.JFrame {
 
     private void bBatallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBatallaActionPerformed
         Entrenador1 entrenador = new Entrenador1();
+        Entrenador2 entrenador2 =new Entrenador2();
+        Entrenador3 entrenador3 = new Entrenador3();
+        
+        entrenador.jlb1.setText(txtNombre.getText());
+        entrenador3.jlb2.setText(txtNombre.getText());
+        entrenador2.jlb3.setText(txtNombre.getText());
         
         //entrenador.txtVaron.setText(txtNombre.getText());
        
-        if(jbtHombre.isSelected() && pok1.isSelected()){
+        if(jbtMujer.isSelected() && pok1.isSelected()){
             entrenador.setVisible(true);
+        }else if(jbtMujer.isSelected() && pok2.isSelected()){
+            entrenador3.setVisible(true);
+        }else if (jbtMujer.isSelected() && pok3.isSelected()){
+            entrenador2.setVisible(true);
         }
         
         
@@ -267,6 +277,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JRadioButton pok3;
     private javax.swing.ButtonGroup pokemon;
     private javax.swing.ButtonGroup sexo;
-    private javax.swing.JTextField txtNombre;
+    public static javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
