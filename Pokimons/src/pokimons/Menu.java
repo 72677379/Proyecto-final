@@ -41,7 +41,7 @@ public class Menu extends javax.swing.JFrame {
         pok2 = new javax.swing.JRadioButton();
         pok3 = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
-        jbtHombre = new javax.swing.JRadioButton();
+        jbtVaron = new javax.swing.JRadioButton();
         jbtMujer = new javax.swing.JRadioButton();
         bBatalla = new javax.swing.JButton();
 
@@ -98,8 +98,8 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        sexo.add(jbtHombre);
-        jbtHombre.setText("Hombre");
+        sexo.add(jbtVaron);
+        jbtVaron.setText("Hombre");
 
         sexo.add(jbtMujer);
         jbtMujer.setText("Mujer");
@@ -112,14 +112,14 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(95, 95, 95)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbtMujer)
-                    .addComponent(jbtHombre))
+                    .addComponent(jbtVaron))
                 .addContainerGap(230, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jbtHombre)
+                .addComponent(jbtVaron)
                 .addGap(18, 18, 18)
                 .addComponent(jbtMujer)
                 .addContainerGap(18, Short.MAX_VALUE))
@@ -206,10 +206,16 @@ public class Menu extends javax.swing.JFrame {
         Entrenador1 entrenador = new Entrenador1();
         Entrenador2 entrenador2 =new Entrenador2();
         Entrenador3 entrenador3 = new Entrenador3();
+        Entrenador4 entrenador4 = new Entrenador4();
+        Entrenador5 entrenador5 = new Entrenador5();
+        Entrenador6 entrenador6 = new Entrenador6();
         
         entrenador.jlb1.setText(txtNombre.getText());
         entrenador3.jlb2.setText(txtNombre.getText());
         entrenador2.jlb3.setText(txtNombre.getText());
+        entrenador4.jlb4.setText(txtNombre.getText());
+        entrenador5.jlb5.setText(txtNombre.getText());
+        entrenador6.jlb6.setText(txtNombre.getText());
         
         //entrenador.txtVaron.setText(txtNombre.getText());
        
@@ -219,6 +225,13 @@ public class Menu extends javax.swing.JFrame {
             entrenador3.setVisible(true);
         }else if (jbtMujer.isSelected() && pok3.isSelected()){
             entrenador2.setVisible(true);
+        }else if (jbtVaron.isSelected() && pok1.isSelected()){
+            entrenador4.setVisible(true);
+        }else if (jbtVaron.isSelected() && pok2.isSelected()){
+           entrenador6.setVisible(true);
+        
+        }else if(jbtVaron.isSelected() && pok3.isSelected()){
+          entrenador5.setVisible(true);
         }
         
         
@@ -270,8 +283,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jbtHombre;
     private javax.swing.JRadioButton jbtMujer;
+    private javax.swing.JRadioButton jbtVaron;
     private javax.swing.JRadioButton pok1;
     private javax.swing.JRadioButton pok2;
     private javax.swing.JRadioButton pok3;
