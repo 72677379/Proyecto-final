@@ -10,10 +10,10 @@ package pokimons;
  * @author alumno
  */
 public class Entrenador1 extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Entrenador1
-     */
+     Pokemon mipokemon = new Pokemon("Groudon");
+     Pokemon rival = new Pokemon("Sceptile");
+     
+   
     public Entrenador1() {
         initComponents();
     }
@@ -59,6 +59,11 @@ public class Entrenador1 extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gary.gif"))); // NOI18N
 
         jButton1.setText("ATACAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -151,10 +156,49 @@ public class Entrenador1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+void AnalizarSituacion() {
+        if (mipokemon.vida == 0) {
+            jTextArea1.append(mipokemon.nombre 
+                    + " Ya no puede continuar. "
+                    + rival.nombre + " gana.");
+            
+            jButton1.setEnabled(false);
+        }
+        
+        if (rival.vida == 0) {
+            jTextArea1.append(rival.nombre 
+                    + " Ya no puede continuar. "
+                    + mipokemon.nombre + " gana.");
+            
+            jButton1.setEnabled(false);
+        }
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       double r1 = Math.random();
+        double r2 = Math.random();
+        
+        if (r1 > r2) {
+            String resultado = mipokemon.Atacar(rival);       
+            jTextArea1.append(resultado + "\n");
 
-    /**
-     * @param args the command line arguments
-     */
+            String resultado2 = rival.Atacar(mipokemon);
+            jTextArea1.append(resultado2 + "\n");
+        }
+        else {
+            String resultado2 = rival.Atacar(mipokemon);
+            jTextArea1.append(resultado2 + "\n");
+            
+            String resultado = mipokemon.Atacar(rival);       
+            jTextArea1.append(resultado + "\n");            
+        }
+        
+        jLabel4.setText(mipokemon.MostrarEstado());
+        jLabel5.setText(rival.MostrarEstado());
+        
+        AnalizarSituacion();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
+           
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

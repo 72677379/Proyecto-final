@@ -9,7 +9,7 @@ package pokimons;
  *
  * @author alumno
  */
-public class Suicune extends Pokemon {
+public class Suicune {
     
     
 }

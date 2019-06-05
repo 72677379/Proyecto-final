@@ -4,44 +4,45 @@ package pokimons;
 import java.util.Random;
 
 public class Pokemon {
-    private String nombre;
-    private int nivel;
-    private int vida;
-
-    @Override
-    public String toString() {
-        return "Pokemon{" + "nombre=" +nombre + ", nivel=" + nivel + ", vida=" + vida + '}';
-    }
-
-    public Pokemon() {
-        this.nombre = "";
-        this.nivel=5 ;
-        this.vida =40+nivel*5;
-    }
-    public void setNombre(String n) {
-        this.nombre = n;
-    }
-    public void subirNivel() {
-        this.nivel = this.nivel + 1;
-       
-    }
+     String nombre;
+     int nivel;
+     int vida;
     
-    public void recibirDanio(int danio) {
-        this.vida = this.vida - danio;
+    Pokemon(String nombre){
+       this.nombre=nombre;
+       this.nivel=5;
+       this.vida=40+nivel*5;
+    }
+   
+    String MostrarEstado() {
+        String estado = this.nombre + " / " + this.vida 
+                + " HP" + this.nivel + " / ";
+        return estado;
+    }
+    String Atacar(Pokemon contrincante) {
+        String resultado = "";
         
-        if (this.vida < 0) {
-            this.vida = 0;
+        int ataque = (int)((new Random().nextInt(5))+5);        
+        int critico = (int) (Math.random() * 100);
+       contrincante.vida = contrincante.vida - ataque;
+        
+        if (contrincante.vida < 0) {
+            contrincante.vida = 0;
         }
-    }
+        
+        if (critico <= 10) {
+            resultado = contrincante.nombre 
+                    + " recibió un ataque crítico de " + ataque;
+        }
+        else {
+            resultado = contrincante.nombre 
+                    + " recibió un ataque de " + ataque;
+        }
+        
+        return resultado;
     
-    public void atacar(Pokemon oponente) {
-        int danio = (int)((new Random().nextInt(4) + 2));
-        oponente.recibirDanio(danio);
-    }
-    
-    
-    
-    
+}
+     
      
     
 }

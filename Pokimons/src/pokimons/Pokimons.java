@@ -12,8 +12,8 @@ public class Pokimons {
         System.out.println(a.toString());
         System.out.println(b.toString());
         
-        a.atacar(b);
-        b.atacar(a);
+       // a.atacar(b);
+        //b.atacar(a);
         
         System.out.println(a.toString());
         System.out.println(b.toString());
