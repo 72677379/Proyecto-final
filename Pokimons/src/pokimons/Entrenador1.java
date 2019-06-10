@@ -18,6 +18,9 @@ public class Entrenador1 extends javax.swing.JFrame {
    
     public Entrenador1() {
         initComponents();
+        
+        
+        
     }
 
     /**
@@ -37,12 +40,13 @@ public class Entrenador1 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Area1 = new javax.swing.JTextArea();
         jlb1 = new javax.swing.JLabel();
         jt1 = new javax.swing.JToggleButton();
         jt2 = new javax.swing.JToggleButton();
         jt3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
+        txt1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,9 +71,9 @@ public class Entrenador1 extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Area1.setColumns(20);
+        Area1.setRows(5);
+        jScrollPane1.setViewportView(Area1);
 
         jt1.setBackground(new java.awt.Color(0, 51, 255));
         jt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8e1de81e1501cb3c053b15f123dc37c4.png"))); // NOI18N
@@ -103,8 +107,11 @@ public class Entrenador1 extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jlb1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txt1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButton1)
@@ -113,8 +120,8 @@ public class Entrenador1 extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jt2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addComponent(jt3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(30, 30, 30)
+                                .addComponent(jt3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)))
                         .addComponent(jLabel4)
                         .addGap(21, 21, 21)
                         .addComponent(jLabel5)
@@ -137,13 +144,17 @@ public class Entrenador1 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(jlb1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
-                        .addComponent(jLabel2)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel3))
+                            .addComponent(jLabel2))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jt1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -166,7 +177,7 @@ public class Entrenador1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 void AnalizarSituacion() {
         if (mipokemon.vida == 0) {
-            jTextArea1.append(mipokemon.nombre 
+            Area1.append(mipokemon.nombre 
                     + " Ya no puede continuar. "
                     + rival.nombre + " gana.");
             
@@ -174,7 +185,7 @@ void AnalizarSituacion() {
         }
         
         if (rival.vida == 0) {
-            jTextArea1.append(rival.nombre 
+            Area1.append(rival.nombre 
                     + " Ya no puede continuar. "
                     + mipokemon.nombre + " gana.");
             
@@ -187,17 +198,17 @@ void AnalizarSituacion() {
         
         if (r1 > r2) {
             String resultado = mipokemon.Atacar(rival);       
-            jTextArea1.append(resultado + "\n");
+            Area1.append(resultado + "\n");
 
             String resultado2 = rival.Atacar(mipokemon);
-            jTextArea1.append(resultado2 + "\n");
+            Area1.append(resultado2 + "\n");
         }
         else {
             String resultado2 = rival.Atacar(mipokemon);
-            jTextArea1.append(resultado2 + "\n");
+            Area1.append(resultado2 + "\n");
             
             String resultado = mipokemon.Atacar(rival);       
-            jTextArea1.append(resultado + "\n");            
+            Area1.append(resultado + "\n");            
         }
         
         //jLabel4.setText(mipokemon.MostrarEstado());
@@ -207,9 +218,17 @@ void AnalizarSituacion() {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt1ActionPerformed
+        String mostrar = "";
         if(jt1.isSelected()){
+            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp();
+            Area1.append(mostrar);
+            
+            
+            
               jt1.setBackground(new Color(255,251,32));
               jt1.setVisible(false);
+              
+              
         }
     }//GEN-LAST:event_jt1ActionPerformed
     
@@ -247,6 +266,7 @@ void AnalizarSituacion() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea Area1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -255,11 +275,11 @@ void AnalizarSituacion() {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToggleButton jToggleButton4;
     public static javax.swing.JLabel jlb1;
     private javax.swing.JToggleButton jt1;
     private javax.swing.JToggleButton jt2;
     private javax.swing.JToggleButton jt3;
+    private javax.swing.JTextField txt1;
     // End of variables declaration//GEN-END:variables
 }

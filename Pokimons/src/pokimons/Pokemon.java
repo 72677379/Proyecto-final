@@ -5,8 +5,9 @@ import java.util.Random;
 
 public class Pokemon {
      String nombre;
-     int nivel;
-     int vida;
+     protected int nivel;
+     public int vida;
+     public int hPotions;
     
     Pokemon(String nombre){
        this.nombre=nombre;
@@ -42,6 +43,12 @@ public class Pokemon {
         return resultado;
     
 }
+    public int usarHp(){
+      return ((vida*25)/100);
+      
+    
+    }
+    
      
      
     

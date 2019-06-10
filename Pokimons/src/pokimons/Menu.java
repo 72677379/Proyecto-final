@@ -11,11 +11,11 @@ package pokimons;
  */
 public class Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Menu
-     */
     public Menu() {
         initComponents();
+        setLocationRelativeTo(null);//codigo para poner en el medio
+        setResizable(false); //esto es para no modificar el frame
+        
     }
 
     /**
