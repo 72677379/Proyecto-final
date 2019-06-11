@@ -126,6 +126,12 @@ public class Entrenador1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jbrendirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
+
+        txt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 97, 98, -1));
 
         vida1.setForeground(new java.awt.Color(255, 255, 255));
@@ -219,6 +225,10 @@ void AnalizarSituacion() {
               jt3.setVisible(false);
         }
     }//GEN-LAST:event_jt3ActionPerformed
+
+    private void txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1ActionPerformed
     
            
     public static void main(String args[]) {

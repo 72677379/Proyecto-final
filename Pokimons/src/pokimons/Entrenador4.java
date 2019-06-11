@@ -6,6 +6,8 @@
 package pokimons;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
+import static pokimons.Entrenador2.jlb3;
 
 /**
  *
@@ -95,6 +97,11 @@ public class Entrenador4 extends javax.swing.JFrame {
         getContentPane().add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 100, -1));
 
         jbrendirse.setText("RENDIRSE");
+        jbrendirse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbrendirseActionPerformed(evt);
+            }
+        });
         getContentPane().add(jbrendirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, -1));
 
         jt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
@@ -151,7 +158,7 @@ public class Entrenador4 extends javax.swing.JFrame {
     
     }
     private void jbatacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbatacarActionPerformed
-            double r1 = Math.random();
+        double r1 = Math.random();
         double r2 = Math.random();
         
         if (r1 > r2) {
@@ -204,6 +211,13 @@ public class Entrenador4 extends javax.swing.JFrame {
               jt3.setVisible(false);
         }
     }//GEN-LAST:event_jt3ActionPerformed
+
+    private void jbrendirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbrendirseActionPerformed
+        if (jbrendirse.isSelected()){
+            JOptionPane.showMessageDialog(null, jlb3.getText()+" se ha rendido.");
+            jbatacar.setVisible(false);
+        }
+    }//GEN-LAST:event_jbrendirseActionPerformed
 
     /**
      * @param args the command line arguments
