@@ -5,12 +5,15 @@
  */
 package pokimons;
 
+import java.awt.Color;
+
 /**
  *
  * @author alumno
  */
 public class Entrenador4 extends javax.swing.JFrame {
-
+    Pokemon mipokemon = new Pokemon("Groudon");
+    Pokemon rival = new Pokemon("Suicune");
     /**
      * Creates new form Entrenador4
      */
@@ -35,141 +38,172 @@ public class Entrenador4 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jbatacar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Area1 = new javax.swing.JTextArea();
         jlb4 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        txt2 = new javax.swing.JTextField();
+        jbrendirse = new javax.swing.JToggleButton();
+        jt3 = new javax.swing.JToggleButton();
+        jt2 = new javax.swing.JToggleButton();
+        jt1 = new javax.swing.JToggleButton();
+        vida1 = new javax.swing.JLabel();
+        vida2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BATALLA");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 17, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Ash_anime_DP.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ash_opt.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 103, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/groudon_1.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Chiller", 0, 110)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("VS.");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/suicune_1.jpg"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gary.gif"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gary_opt.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, -1, -1));
 
-        jButton1.setText("ATACAR");
+        jbatacar.setText("ATACAR");
+        jbatacar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbatacarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbatacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Area1.setColumns(20);
+        Area1.setRows(5);
+        jScrollPane1.setViewportView(Area1);
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8e1de81e1501cb3c053b15f123dc37c4.png"))); // NOI18N
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 350, 170));
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8e1de81e1501cb3c053b15f123dc37c4.png"))); // NOI18N
+        jlb4.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jlb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 72, 81, 20));
+        getContentPane().add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 100, -1));
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8e1de81e1501cb3c053b15f123dc37c4.png"))); // NOI18N
+        jbrendirse.setText("RENDIRSE");
+        getContentPane().add(jbrendirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        jt3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 276, 50, 49));
 
-        jToggleButton4.setText("RENDIRSE");
+        jt2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        jt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 276, 51, 49));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jlb4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(69, 69, 69)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel3)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel4)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel5))
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton4)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel1)
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jlb4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(30, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton4)
-                        .addGap(91, 91, 91))))
-        );
+        jt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        jt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 276, 51, 49));
+
+        vida1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(vida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 110, 20));
+
+        vida2.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 110, 20));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    void AnalizarSituacion (){
+        if (mipokemon.vida == 0) {
+            Area1.append(mipokemon.nombre 
+                    + " ya no puede continuar. "
+                    + rival.nombre + " gana."+"\n");
+            
+            jbatacar.setEnabled(false);
+        }
+        
+        else if (rival.vida == 0) {
+            Area1.append(rival.nombre 
+                    + " ya no puede continuar. "
+                    + mipokemon.nombre + " gana."+"\n");
+            
+            jbatacar.setEnabled(false);
+        }
+    
+    }
+    private void jbatacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbatacarActionPerformed
+            double r1 = Math.random();
+        double r2 = Math.random();
+        
+        if (r1 > r2) {
+            String resultado = mipokemon.Atacar(rival);       
+            Area1.append(resultado + "\n");
+
+            String resultado2 = rival.Atacar(mipokemon);
+            Area1.append(resultado2 + "\n");
+        }
+        else {
+            String resultado2 = rival.Atacar(mipokemon);
+            Area1.append(resultado2 + "\n");
+            
+            String resultado = mipokemon.Atacar(rival);       
+            Area1.append(resultado + "\n");            
+        }
+        
+        vida1.setText(mipokemon.MostrarEstado());
+        vida2.setText(rival.MostrarEstado());
+        
+        AnalizarSituacion();
+    }//GEN-LAST:event_jbatacarActionPerformed
+
+    private void jt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt1ActionPerformed
+        String mostrar = "";
+        if(jt1.isSelected()){
+            mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(mostrar);
+              jt1.setBackground(new Color(255,251,32));
+              jt1.setVisible(false);
+        }
+    }//GEN-LAST:event_jt1ActionPerformed
+
+    private void jt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt2ActionPerformed
+        String mostrar = "";
+        if(jt2.isSelected()){
+            mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(mostrar);
+              jt2.setBackground(new Color(255,251,32));
+              jt2.setVisible(false);
+        }
+    }//GEN-LAST:event_jt2ActionPerformed
+
+    private void jt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt3ActionPerformed
+        String mostrar = "";
+        if(jt3.isSelected()){
+            mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(mostrar);
+              jt3.setBackground(new Color(255,251,32));
+              jt3.setVisible(false);
+        }
+    }//GEN-LAST:event_jt3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,20 +241,23 @@ public class Entrenador4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextArea Area1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JButton jbatacar;
+    private javax.swing.JToggleButton jbrendirse;
     public static javax.swing.JLabel jlb4;
+    private javax.swing.JToggleButton jt1;
+    private javax.swing.JToggleButton jt2;
+    private javax.swing.JToggleButton jt3;
+    private javax.swing.JTextField txt2;
+    private javax.swing.JLabel vida1;
+    private javax.swing.JLabel vida2;
     // End of variables declaration//GEN-END:variables
 }

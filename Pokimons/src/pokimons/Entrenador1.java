@@ -49,22 +49,34 @@ public class Entrenador1 extends javax.swing.JFrame {
         jt3 = new javax.swing.JToggleButton();
         jbrendirse = new javax.swing.JToggleButton();
         txt1 = new javax.swing.JTextField();
+        vida1 = new javax.swing.JLabel();
+        vida2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BATALLA");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 11, 258, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Misty_(anime_SL).png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/misty_opt.gif"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 97, 104, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/groudon_1.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 125, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Chiller", 0, 120)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("VS.");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, 122));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sceptile_1.jpg"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 106, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gary.gif"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gary_opt.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 106, -1, -1));
 
         jb1.setText("ATACAR");
         jb1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,32 +84,40 @@ public class Entrenador1 extends javax.swing.JFrame {
                 jb1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
 
         Area1.setColumns(20);
         Area1.setRows(5);
         jScrollPane1.setViewportView(Area1);
 
-        jt1.setBackground(new java.awt.Color(0, 51, 255));
-        jt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8e1de81e1501cb3c053b15f123dc37c4.png"))); // NOI18N
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 350, 170));
+
+        jlb1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jlb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 71, 80, 18));
+
+        jt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
         jt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jt1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 316, 47, 51));
 
-        jt2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8e1de81e1501cb3c053b15f123dc37c4.png"))); // NOI18N
+        jt2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
         jt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jt2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 316, 51, 51));
 
-        jt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8e1de81e1501cb3c053b15f123dc37c4.png"))); // NOI18N
+        jt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
         jt3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jt3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 316, 50, 51));
 
         jbrendirse.setText("RENDIRSE");
         jbrendirse.addActionListener(new java.awt.event.ActionListener() {
@@ -105,103 +125,33 @@ public class Entrenador1 extends javax.swing.JFrame {
                 jbrendirseActionPerformed(evt);
             }
         });
+        getContentPane().add(jbrendirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
+        getContentPane().add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 97, 98, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jb1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jbrendirse))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jlb1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txt1))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jt1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jt2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jt3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(30, 30, 30)))
-                                .addComponent(jLabel4)
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel6)))))
-                .addContainerGap(56, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(194, 194, 194))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jlb1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabel3))
-                            .addComponent(jLabel2))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jt1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jt2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jt3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb1)
-                    .addComponent(jbrendirse))
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
-        );
+        vida1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(vida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 106, 25));
+
+        vida2.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 216, 111, 27));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 void AnalizarSituacion() {
         if (mipokemon.vida == 0) {
             Area1.append(mipokemon.nombre 
-                    + " Ya no puede continuar. "
-                    + rival.nombre + " gana.");
+                    + " ya no puede continuar. "
+                    + rival.nombre + " gana."+"\n");
             
             jb1.setEnabled(false);
         }
         
-        if (rival.vida == 0) {
+        else if (rival.vida == 0) {
             Area1.append(rival.nombre 
-                    + " Ya no puede continuar. "
-                    + mipokemon.nombre + " gana.");
+                    + " ya no puede continuar. "
+                    + mipokemon.nombre + " gana."+"\n");
             
             jb1.setEnabled(false);
         }
@@ -225,8 +175,8 @@ void AnalizarSituacion() {
             Area1.append(resultado + "\n");            
         }
         
-        //jLabel4.setText(mipokemon.MostrarEstado());
-        //jLabel5.setText(rival.MostrarEstado());
+        vida1.setText(mipokemon.MostrarEstado());
+        vida2.setText(rival.MostrarEstado());
         
         AnalizarSituacion();
     }//GEN-LAST:event_jb1ActionPerformed
@@ -234,7 +184,7 @@ void AnalizarSituacion() {
     private void jt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt1ActionPerformed
         String mostrar = "";
         if(jt1.isSelected()){
-            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp();
+            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
               jt1.setBackground(new Color(255,251,32));
               jt1.setVisible(false);
@@ -253,7 +203,7 @@ void AnalizarSituacion() {
     private void jt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt2ActionPerformed
         String mostrar = "";
         if(jt2.isSelected()){
-            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp();
+            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
               jt2.setBackground(new Color(255,251,32));
               jt2.setVisible(false);
@@ -263,7 +213,7 @@ void AnalizarSituacion() {
     private void jt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt3ActionPerformed
         String mostrar = "";
         if(jt3.isSelected()){
-            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp();
+            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
               jt3.setBackground(new Color(255,251,32));
               jt3.setVisible(false);
@@ -311,6 +261,7 @@ void AnalizarSituacion() {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jb1;
     private javax.swing.JToggleButton jbrendirse;
@@ -319,5 +270,7 @@ void AnalizarSituacion() {
     private javax.swing.JToggleButton jt2;
     private javax.swing.JToggleButton jt3;
     private javax.swing.JTextField txt1;
+    private javax.swing.JLabel vida1;
+    private javax.swing.JLabel vida2;
     // End of variables declaration//GEN-END:variables
 }

@@ -114,6 +114,11 @@ public class Menu extends javax.swing.JFrame {
 
         sexo.add(jbtMujer);
         jbtMujer.setText("Mujer");
+        jbtMujer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtMujerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -187,6 +192,10 @@ public class Menu extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_bBatallaActionPerformed
+
+    private void jbtMujerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtMujerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtMujerActionPerformed
 
     /**
      * @param args the command line arguments
