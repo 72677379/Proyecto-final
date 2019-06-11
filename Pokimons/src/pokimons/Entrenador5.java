@@ -16,6 +16,8 @@ public class Entrenador5 extends javax.swing.JFrame {
      */
     public Entrenador5() {
         initComponents();
+        setLocationRelativeTo(null);//codigo para poner en el medio
+        setResizable(false);
     }
 
     /**

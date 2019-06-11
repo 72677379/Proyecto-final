@@ -6,6 +6,7 @@
 package pokimons;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,7 +19,8 @@ public class Entrenador1 extends javax.swing.JFrame {
    
     public Entrenador1() {
         initComponents();
-        
+        setLocationRelativeTo(null);//codigo para poner en el medio
+        setResizable(false);      
         
         
     }
@@ -38,14 +40,14 @@ public class Entrenador1 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jb1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Area1 = new javax.swing.JTextArea();
         jlb1 = new javax.swing.JLabel();
         jt1 = new javax.swing.JToggleButton();
         jt2 = new javax.swing.JToggleButton();
         jt3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        jbrendirse = new javax.swing.JToggleButton();
         txt1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,10 +66,10 @@ public class Entrenador1 extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gary.gif"))); // NOI18N
 
-        jButton1.setText("ATACAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jb1.setText("ATACAR");
+        jb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jb1ActionPerformed(evt);
             }
         });
 
@@ -84,10 +86,25 @@ public class Entrenador1 extends javax.swing.JFrame {
         });
 
         jt2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8e1de81e1501cb3c053b15f123dc37c4.png"))); // NOI18N
+        jt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt2ActionPerformed(evt);
+            }
+        });
 
         jt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8e1de81e1501cb3c053b15f123dc37c4.png"))); // NOI18N
+        jt3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt3ActionPerformed(evt);
+            }
+        });
 
-        jToggleButton4.setText("RENDIRSE");
+        jbrendirse.setText("RENDIRSE");
+        jbrendirse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbrendirseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,37 +114,38 @@ public class Entrenador1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(69, 69, 69)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton4))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jlb1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txt1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton1)
+                                .addComponent(jb1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jbrendirse))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jlb1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txt1))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jt1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jt2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jt2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jt3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)))
+                                .addComponent(jLabel4)
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel5)
                                 .addGap(18, 18, 18)
-                                .addComponent(jt3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)))
-                        .addComponent(jLabel4)
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                                .addComponent(jLabel6)))))
+                .addContainerGap(56, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -160,17 +178,13 @@ public class Entrenador1 extends javax.swing.JFrame {
                     .addComponent(jt1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jt2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jt3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addGap(32, 32, 32)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(36, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton4)
-                        .addGap(96, 96, 96))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb1)
+                    .addComponent(jbrendirse))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -181,7 +195,7 @@ void AnalizarSituacion() {
                     + " Ya no puede continuar. "
                     + rival.nombre + " gana.");
             
-            jButton1.setEnabled(false);
+            jb1.setEnabled(false);
         }
         
         if (rival.vida == 0) {
@@ -189,10 +203,10 @@ void AnalizarSituacion() {
                     + " Ya no puede continuar. "
                     + mipokemon.nombre + " gana.");
             
-            jButton1.setEnabled(false);
+            jb1.setEnabled(false);
         }
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
        double r1 = Math.random();
         double r2 = Math.random();
         
@@ -215,22 +229,46 @@ void AnalizarSituacion() {
         //jLabel5.setText(rival.MostrarEstado());
         
         AnalizarSituacion();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jb1ActionPerformed
 
     private void jt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt1ActionPerformed
         String mostrar = "";
         if(jt1.isSelected()){
             mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp();
             Area1.append(mostrar);
-            
-            
-            
               jt1.setBackground(new Color(255,251,32));
               jt1.setVisible(false);
               
               
         }
     }//GEN-LAST:event_jt1ActionPerformed
+
+    private void jbrendirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbrendirseActionPerformed
+        if(jbrendirse.isSelected()){
+            JOptionPane.showMessageDialog(null, jlb1.getText()+" se ha rendido.");
+            jb1.setVisible(false);
+        }
+    }//GEN-LAST:event_jbrendirseActionPerformed
+
+    private void jt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt2ActionPerformed
+        String mostrar = "";
+        if(jt2.isSelected()){
+            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp();
+            Area1.append(mostrar);
+              jt2.setBackground(new Color(255,251,32));
+              jt2.setVisible(false);
+        }
+    }//GEN-LAST:event_jt2ActionPerformed
+
+    private void jt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt3ActionPerformed
+        String mostrar = "";
+        if(jt3.isSelected()){
+            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp();
+            Area1.append(mostrar);
+              jt3.setBackground(new Color(255,251,32));
+              jt3.setVisible(false);
+        }
+    }//GEN-LAST:event_jt3ActionPerformed
     
            
     public static void main(String args[]) {
@@ -267,7 +305,6 @@ void AnalizarSituacion() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Area1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -275,7 +312,8 @@ void AnalizarSituacion() {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JButton jb1;
+    private javax.swing.JToggleButton jbrendirse;
     public static javax.swing.JLabel jlb1;
     private javax.swing.JToggleButton jt1;
     private javax.swing.JToggleButton jt2;
