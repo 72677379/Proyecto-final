@@ -99,6 +99,11 @@ public class Menu extends javax.swing.JFrame {
 
         pokemon.add(pok1);
         pok1.setText("Groudon");
+        pok1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pok1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(pok1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
 
         pokemon.add(pok2);
@@ -124,6 +129,7 @@ public class Menu extends javax.swing.JFrame {
         Entrenador6 entrenador6 = new Entrenador6();
         
         entrenador.jlb1.setText(txtNombre.getText());
+        //entrenador.
         entrenador3.jlb2.setText(txtNombre.getText());
         entrenador2.jlb3.setText(txtNombre.getText());
         entrenador4.jlb4.setText(txtNombre.getText());
@@ -131,8 +137,8 @@ public class Menu extends javax.swing.JFrame {
         entrenador6.jlb6.setText(txtNombre.getText());
         
         //entrenador.txtVaron.setText(txtNombre.getText());
-       
-        if(jbtMujer.isSelected() && pok1.isSelected()){
+       //String mostrar="";
+        if(jbtMujer.isSelected() && pok1.isSelected()){ 
             entrenador.setVisible(true);
         }else if(jbtMujer.isSelected() && pok2.isSelected()){
             entrenador3.setVisible(true);
@@ -146,7 +152,7 @@ public class Menu extends javax.swing.JFrame {
         }else if(jbtVaron.isSelected() && pok3.isSelected()){
           entrenador5.setVisible(true);
         }
-        JOptionPane.showMessageDialog(null, "Bienvenido"+txtNombre.getText() + "\n" + 
+        JOptionPane.showMessageDialog(null, "Bienvenido "+txtNombre.getText() + ":"+"\n" + 
                 "soy el profesor Ouk y por la elección de tu primero" +"\n" +
                    "pokemon tendras que luchar contra mi nieto Gary");
         
@@ -156,6 +162,14 @@ public class Menu extends javax.swing.JFrame {
     private void jbtMujerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtMujerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtMujerActionPerformed
+
+    private void pok1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pok1ActionPerformed
+        if(pok1.isSelected()){
+           String m =(JOptionPane.showInputDialog("Desea poner un nombre al pokemon"));
+           
+           
+        }
+    }//GEN-LAST:event_pok1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,7 +217,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton jbtMujer;
     private javax.swing.JRadioButton jbtVaron;
-    private javax.swing.JRadioButton pok1;
+    public static javax.swing.JRadioButton pok1;
     private javax.swing.JRadioButton pok2;
     private javax.swing.JRadioButton pok3;
     private javax.swing.ButtonGroup pokemon;

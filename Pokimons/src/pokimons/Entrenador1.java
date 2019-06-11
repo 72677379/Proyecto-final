@@ -127,6 +127,7 @@ public class Entrenador1 extends javax.swing.JFrame {
         });
         getContentPane().add(jbrendirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
 
+        txt1.setEditable(false);
         txt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt1ActionPerformed(evt);
@@ -194,6 +195,7 @@ void AnalizarSituacion() {
             Area1.append(mostrar);
               jt1.setBackground(new Color(255,251,32));
               jt1.setVisible(false);
+              //txt1.add(m);
               
               
         }
@@ -279,7 +281,7 @@ void AnalizarSituacion() {
     private javax.swing.JToggleButton jt1;
     private javax.swing.JToggleButton jt2;
     private javax.swing.JToggleButton jt3;
-    private javax.swing.JTextField txt1;
+    public static javax.swing.JTextField txt1;
     private javax.swing.JLabel vida1;
     private javax.swing.JLabel vida2;
     // End of variables declaration//GEN-END:variables
