@@ -76,7 +76,7 @@ public class Entrenador5 extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gary_opt.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, -1, -1));
 
         jbatacar.setText("ATACAR");
         jbatacar.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +86,7 @@ public class Entrenador5 extends javax.swing.JFrame {
         });
         getContentPane().add(jbatacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
 
+        Area1.setEditable(false);
         Area1.setColumns(20);
         Area1.setRows(5);
         jScrollPane1.setViewportView(Area1);

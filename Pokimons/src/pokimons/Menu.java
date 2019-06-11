@@ -5,6 +5,8 @@
  */
 package pokimons;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alumno
@@ -36,25 +38,25 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        bBatalla = new javax.swing.JButton();
+        jbtVaron = new javax.swing.JRadioButton();
+        jbtMujer = new javax.swing.JRadioButton();
         pok1 = new javax.swing.JRadioButton();
         pok2 = new javax.swing.JRadioButton();
         pok3 = new javax.swing.JRadioButton();
-        jPanel2 = new javax.swing.JPanel();
-        jbtVaron = new javax.swing.JRadioButton();
-        jbtMujer = new javax.swing.JRadioButton();
-        bBatalla = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Nombre de usuario : ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 21, 172, 36));
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 23, 287, 36));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 21, 220, 36));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 287, 36));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 0));
         jLabel8.setText("Sexo: ");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 60, 22));
 
@@ -64,53 +66,27 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/groudon.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 197, 180));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 197, 180));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sceptile.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 201, 180));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 201, 180));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/suicune.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 200, 180));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 200, 180));
 
-        pokemon.add(pok1);
-        pok1.setText("Groudon");
-
-        pokemon.add(pok2);
-        pok2.setText("sceptile");
-
-        pokemon.add(pok3);
-        pok3.setText("suicune");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(pok1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
-                .addComponent(pok2)
-                .addGap(189, 189, 189)
-                .addComponent(pok3)
-                .addGap(19, 19, 19))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pok1)
-                    .addComponent(pok2)
-                    .addComponent(pok3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        bBatalla.setText("Iniciar Batalla");
+        bBatalla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBatallaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 131, 35));
 
         sexo.add(jbtVaron);
         jbtVaron.setText("Hombre");
+        getContentPane().add(jbtVaron, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         sexo.add(jbtMujer);
         jbtMujer.setText("Mujer");
@@ -119,37 +95,19 @@ public class Menu extends javax.swing.JFrame {
                 jbtMujerActionPerformed(evt);
             }
         });
+        getContentPane().add(jbtMujer, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtMujer)
-                    .addComponent(jbtVaron))
-                .addContainerGap(230, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jbtVaron)
-                .addGap(18, 18, 18)
-                .addComponent(jbtMujer)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+        pokemon.add(pok1);
+        pok1.setText("Groudon");
+        getContentPane().add(pok1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+        pokemon.add(pok2);
+        pok2.setText("sceptile");
+        getContentPane().add(pok2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, -1, -1));
 
-        bBatalla.setText("Iniciar Batalla");
-        bBatalla.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bBatallaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(bBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 131, 35));
+        pokemon.add(pok3);
+        pok3.setText("suicune");
+        getContentPane().add(pok3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Pokemon.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 510));
@@ -188,7 +146,9 @@ public class Menu extends javax.swing.JFrame {
         }else if(jbtVaron.isSelected() && pok3.isSelected()){
           entrenador5.setVisible(true);
         }
-        
+        JOptionPane.showMessageDialog(null, "Bienvenido"+txtNombre.getText() + "\n" + 
+                "soy el profesor Ouk y por la elección de tu primero" +"\n" +
+                   "pokemon tendras que luchar contra mi nieto Gary");
         
         
     }//GEN-LAST:event_bBatallaActionPerformed
@@ -241,8 +201,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jbtMujer;
     private javax.swing.JRadioButton jbtVaron;
     private javax.swing.JRadioButton pok1;

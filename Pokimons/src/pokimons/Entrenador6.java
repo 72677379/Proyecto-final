@@ -5,12 +5,17 @@
  */
 package pokimons;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import static pokimons.Entrenador2.jlb3;
+
 /**
  *
  * @author alumno
  */
 public class Entrenador6 extends javax.swing.JFrame {
-
+    Pokemon mipokemon = new Pokemon("Suicune");
+    Pokemon rival = new Pokemon("Sceptile");
     /**
      * Creates new form Entrenador6
      */
@@ -43,9 +48,9 @@ public class Entrenador6 extends javax.swing.JFrame {
         jt1 = new javax.swing.JToggleButton();
         jt2 = new javax.swing.JToggleButton();
         jt3 = new javax.swing.JToggleButton();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        txt2 = new javax.swing.JTextField();
+        vida1 = new javax.swing.JLabel();
+        vida2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,8 +79,14 @@ public class Entrenador6 extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 86, 100, -1));
 
         jbatacar.setText("ATACAR");
+        jbatacar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbatacarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jbatacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
 
+        Area1.setEditable(false);
         Area1.setColumns(20);
         Area1.setRows(5);
         jScrollPane1.setViewportView(Area1);
@@ -92,20 +103,35 @@ public class Entrenador6 extends javax.swing.JFrame {
         getContentPane().add(jbrendirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, -1, -1));
 
         jt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        jt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 51, 48));
 
         jt2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        jt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 51, 48));
 
         jt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        jt3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 48, 48));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 100, 20));
+        getContentPane().add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 100, 20));
 
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 110, 20));
+        vida1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(vida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 110, 20));
 
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 120, 20));
+        vida2.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 120, 20));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 470));
@@ -114,8 +140,82 @@ public class Entrenador6 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbrendirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbrendirseActionPerformed
-        // TODO add your handling code here:
+        if (jbrendirse.isSelected()){
+            JOptionPane.showMessageDialog(null, jlb3.getText()+" se ha rendido.");
+            jbatacar.setVisible(false);
+        }
     }//GEN-LAST:event_jbrendirseActionPerformed
+
+    private void jt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt1ActionPerformed
+        String mostrar = "";
+        if(jt1.isSelected()){
+            mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(mostrar);
+              jt1.setBackground(new Color(255,251,32));
+              jt1.setVisible(false);
+        }
+    }//GEN-LAST:event_jt1ActionPerformed
+
+    private void jt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt2ActionPerformed
+        String mostrar = "";
+        if(jt2.isSelected()){
+            mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(mostrar);
+              jt2.setBackground(new Color(255,251,32));
+              jt2.setVisible(false);
+        }
+    }//GEN-LAST:event_jt2ActionPerformed
+
+    private void jt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt3ActionPerformed
+        String mostrar = "";
+        if(jt3.isSelected()){
+            mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(mostrar);
+              jt3.setBackground(new Color(255,251,32));
+              jt3.setVisible(false);
+        }
+    }//GEN-LAST:event_jt3ActionPerformed
+    void AnalizarSituacion(){
+        if (mipokemon.vida == 0) {
+            Area1.append(mipokemon.nombre 
+                    + " ya no puede continuar. "
+                    + rival.nombre + " gana."+"\n");
+            
+            jbatacar.setEnabled(false);
+        }
+        
+        else if (rival.vida == 0) {
+            Area1.append(rival.nombre 
+                    + " ya no puede continuar. "
+                    + mipokemon.nombre + " gana."+"\n");
+            
+            jbatacar.setEnabled(false);
+        }
+    }
+    private void jbatacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbatacarActionPerformed
+        double r1 = Math.random();
+        double r2 = Math.random();
+        
+        if (r1 > r2) {
+            String resultado = mipokemon.Atacar(rival);       
+            Area1.append(resultado + "\n");
+
+            String resultado2 = rival.Atacar(mipokemon);
+            Area1.append(resultado2 + "\n");
+        }
+        else {
+            String resultado2 = rival.Atacar(mipokemon);
+            Area1.append(resultado2 + "\n");
+            
+            String resultado = mipokemon.Atacar(rival);       
+            Area1.append(resultado + "\n");            
+        }
+        
+        vida1.setText(mipokemon.MostrarEstado());
+        vida2.setText(rival.MostrarEstado());
+        
+        AnalizarSituacion();
+    }//GEN-LAST:event_jbatacarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,15 +261,15 @@ public class Entrenador6 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbatacar;
     private javax.swing.JToggleButton jbrendirse;
     public static javax.swing.JLabel jlb6;
     private javax.swing.JToggleButton jt1;
     private javax.swing.JToggleButton jt2;
     private javax.swing.JToggleButton jt3;
+    private javax.swing.JTextField txt2;
+    private javax.swing.JLabel vida1;
+    private javax.swing.JLabel vida2;
     // End of variables declaration//GEN-END:variables
 }

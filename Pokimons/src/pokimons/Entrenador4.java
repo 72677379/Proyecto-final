@@ -86,6 +86,7 @@ public class Entrenador4 extends javax.swing.JFrame {
         });
         getContentPane().add(jbatacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
 
+        Area1.setEditable(false);
         Area1.setColumns(20);
         Area1.setRows(5);
         jScrollPane1.setViewportView(Area1);
@@ -93,7 +94,7 @@ public class Entrenador4 extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 350, 170));
 
         jlb4.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jlb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 72, 81, 20));
+        getContentPane().add(jlb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 81, 20));
         getContentPane().add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 100, -1));
 
         jbrendirse.setText("RENDIRSE");
@@ -135,7 +136,7 @@ public class Entrenador4 extends javax.swing.JFrame {
         getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 110, 20));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 500));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
