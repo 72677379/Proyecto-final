@@ -61,6 +61,11 @@ public class Menu extends javax.swing.JFrame {
                 txtNombreActionPerformed(evt);
             }
         });
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 287, 36));
 
         jLabel8.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
@@ -254,6 +259,15 @@ public class Menu extends javax.swing.JFrame {
     private void bsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_bsalirActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+       
+        int limite = 10;
+        if (txtNombre.getText().length()== limite){
+           evt.consume();
+       }
+
+    }//GEN-LAST:event_txtNombreKeyTyped
 
     /**
      * @param args the command line arguments
