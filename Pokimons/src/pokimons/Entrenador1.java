@@ -5,6 +5,7 @@
  */
 package pokimons;
 
+import java.applet.AudioClip;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -21,6 +22,10 @@ public class Entrenador1 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);//codigo para poner en el medio
         setResizable(false);
+        AudioClip Sound;
+        Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Sonido/Cancion.wav"));
+        Sound.play();
+      
         
         
         

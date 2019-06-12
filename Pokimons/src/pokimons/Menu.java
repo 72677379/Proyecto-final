@@ -18,9 +18,7 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);//codigo para poner en el medio
         setResizable(false); //esto es para no modificar el frame
-        AudioClip Sound;
-        Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Sonido/Cancion.wav"));
-        Sound.play();
+        
         
     }
 
