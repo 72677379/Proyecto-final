@@ -3,8 +3,11 @@ package pokimons;
 
 public class Pokimons {
     public static void main(String[] args) {
-       Menu menu = new Menu();
-         menu.setVisible(true);
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        
+        Menu audio = new Menu();
+        audio.setVisible(true);
          //Suicune a = new Suicune();
          
         

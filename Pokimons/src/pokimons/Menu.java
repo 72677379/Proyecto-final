@@ -5,6 +5,7 @@
  */
 package pokimons;
 
+import java.applet.AudioClip;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +18,9 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);//codigo para poner en el medio
         setResizable(false); //esto es para no modificar el frame
+        AudioClip Sound;
+        Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Sonido/Cancion.wav"));
+        Sound.play();
         
     }
 
@@ -147,6 +151,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(pok3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_opt_1.jpg"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 490));
 
         pack();
@@ -213,6 +222,7 @@ public class Menu extends javax.swing.JFrame {
         
         
         
+        
     }//GEN-LAST:event_bBatallaActionPerformed
 
     private void jbtMujerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtMujerActionPerformed
@@ -273,6 +283,10 @@ public class Menu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtNombreKeyTyped
 
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        
+    }//GEN-LAST:event_jLabel5MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -306,6 +320,7 @@ public class Menu extends javax.swing.JFrame {
                 new Menu().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -327,4 +342,5 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.ButtonGroup sexo;
     public static javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
+
 }
