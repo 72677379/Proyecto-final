@@ -149,10 +149,10 @@ public class Entrenador1 extends javax.swing.JFrame {
         getContentPane().add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 97, 98, -1));
 
         vida1.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(vida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 110, 20));
+        getContentPane().add(vida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 120, 20));
 
         vida2.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 216, 100, 20));
+        getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 216, 130, 20));
 
         jl123456.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo1.jpg"))); // NOI18N
         getContentPane().add(jl123456, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
@@ -222,8 +222,9 @@ void AnalizarSituacion() {
         
         
         
-        vida1.setText(mipokemon.MostrarEstado());
-        vida2.setText(rival.MostrarEstado());
+        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
+        
         
         
         AnalizarSituacion();
@@ -232,11 +233,7 @@ void AnalizarSituacion() {
     }//GEN-LAST:event_jb1ActionPerformed
        int Mipocion=0;
     private void posion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion1ActionPerformed
-        /*String mostrar = "";
-        if(posion1.isSelected()){
-            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
-            Area1.append(mostrar);*/
-        
+         
         String resultado = mipokemon.UsarPocion(mipokemon);
         Area1.append(resultado + "\n");
         Mipocion = Mipocion + 1;
@@ -245,7 +242,7 @@ void AnalizarSituacion() {
         }
         int pos = (int)(Math.random()*100);
         if (cont < 3){
-            if (pos < 40 && rival.vida <= 30){
+            if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
                 Area1.append(resultado2 + "\n");
                 cont = cont + 1;
@@ -260,8 +257,8 @@ void AnalizarSituacion() {
             Area1.append(resultado2 + "\n");
         }
         
-        vida1.setText(mipokemon.MostrarEstado());
-        vida2.setText(rival.MostrarEstado());
+        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
             
               posion1.setBackground(new Color(255,251,32));
               posion1.setVisible(false);
@@ -269,6 +266,13 @@ void AnalizarSituacion() {
               
               AnalizarSituacion();
         
+        String mostrar = "";
+        if(posion1.isSelected()){
+            mostrar=txt1.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(mostrar);
+              posion1.setBackground(new Color(255,251,32));
+              posion1.setVisible(false);
+        }
     }//GEN-LAST:event_posion1ActionPerformed
 
     private void jbrendirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbrendirseActionPerformed
@@ -288,7 +292,7 @@ void AnalizarSituacion() {
         }
         int pos = (int)(Math.random()*100);
         if (cont < 3){
-            if (pos < 40 && rival.vida <= 30){
+            if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
                 Area1.append(resultado2 + "\n");
                 cont = cont + 1;
@@ -303,8 +307,8 @@ void AnalizarSituacion() {
             Area1.append(resultado2 + "\n");
         }
         
-        vida1.setText(mipokemon.MostrarEstado());
-        vida2.setText(rival.MostrarEstado());
+        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
             
               posion2.setBackground(new Color(255,251,32));
               posion2.setVisible(false);
@@ -314,7 +318,7 @@ void AnalizarSituacion() {
               
         String mostrar = "";
         if(posion2.isSelected()){
-            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            mostrar=txt1.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
               posion2.setBackground(new Color(255,251,32));
               posion2.setVisible(false);
@@ -330,7 +334,7 @@ void AnalizarSituacion() {
         }
         int pos = (int)(Math.random()*100);
         if (cont < 3){
-            if (pos < 40 && rival.vida <= 30){
+            if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
                 Area1.append(resultado2 + "\n");
                 cont = cont + 1;
@@ -345,8 +349,8 @@ void AnalizarSituacion() {
             Area1.append(resultado2 + "\n");
         }
         
-        vida1.setText(mipokemon.MostrarEstado());
-        vida2.setText(rival.MostrarEstado());
+        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
             
               posion3.setBackground(new Color(255,251,32));
               posion3.setVisible(false);
@@ -356,7 +360,7 @@ void AnalizarSituacion() {
         
         String mostrar = "";
         if(posion3.isSelected()){
-            mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            mostrar=txt1.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
               posion3.setBackground(new Color(255,251,32));
               posion3.setVisible(false);

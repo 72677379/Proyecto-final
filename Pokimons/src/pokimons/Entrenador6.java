@@ -181,8 +181,8 @@ public class Entrenador6 extends javax.swing.JFrame {
             Area1.append(resultado2 + "\n");
         }
         
-        vida1.setText(mipokemon.MostrarEstado());
-        vida2.setText(rival.MostrarEstado());
+        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
             
               posion1.setBackground(new Color(255,251,32));
               posion1.setVisible(false);
@@ -192,7 +192,7 @@ public class Entrenador6 extends javax.swing.JFrame {
         
         String mostrar = "";
         if(posion1.isSelected()){
-            mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            mostrar=txt2.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
               posion1.setBackground(new Color(255,251,32));
               posion1.setVisible(false);
@@ -223,8 +223,8 @@ public class Entrenador6 extends javax.swing.JFrame {
             Area1.append(resultado2 + "\n");
         }
         
-        vida1.setText(mipokemon.MostrarEstado());
-        vida2.setText(rival.MostrarEstado());
+        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
             
               posion2.setBackground(new Color(255,251,32));
               posion2.setVisible(false);
@@ -234,7 +234,7 @@ public class Entrenador6 extends javax.swing.JFrame {
         
         String mostrar = "";
         if(posion2.isSelected()){
-            mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            mostrar=txt2.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
               posion2.setBackground(new Color(255,251,32));
               posion2.setVisible(false);
@@ -265,8 +265,8 @@ public class Entrenador6 extends javax.swing.JFrame {
             Area1.append(resultado2 + "\n");
         }
         
-        vida1.setText(mipokemon.MostrarEstado());
-        vida2.setText(rival.MostrarEstado());
+        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
             
               posion3.setBackground(new Color(255,251,32));
               posion3.setVisible(false);
@@ -276,7 +276,7 @@ public class Entrenador6 extends javax.swing.JFrame {
         
         String mostrar = "";
         if(posion3.isSelected()){
-            mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            mostrar=txt2.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
               posion3.setBackground(new Color(255,251,32));
               posion3.setVisible(false);
@@ -322,8 +322,8 @@ public class Entrenador6 extends javax.swing.JFrame {
             Area1.append(resultado + "\n");            
         }
         
-        vida1.setText(mipokemon.MostrarEstado());
-        vida2.setText(rival.MostrarEstado());
+        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
         
         AnalizarSituacion();
     }//GEN-LAST:event_jbatacarActionPerformed

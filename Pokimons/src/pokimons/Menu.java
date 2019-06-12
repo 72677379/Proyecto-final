@@ -79,7 +79,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sceptile.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 201, 180));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 200, 180));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/suicune.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
