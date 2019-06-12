@@ -46,14 +46,16 @@ public class Entrenador5 extends javax.swing.JFrame {
         jlb5 = new javax.swing.JLabel();
         txt2 = new javax.swing.JTextField();
         jbrendirse = new javax.swing.JToggleButton();
-        jt3 = new javax.swing.JToggleButton();
-        jt2 = new javax.swing.JToggleButton();
-        jt1 = new javax.swing.JToggleButton();
+        posion3 = new javax.swing.JToggleButton();
+        posion2 = new javax.swing.JToggleButton();
+        posion1 = new javax.swing.JToggleButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
         vida1 = new javax.swing.JLabel();
         vida2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 48)); // NOI18N
@@ -105,29 +107,37 @@ public class Entrenador5 extends javax.swing.JFrame {
         });
         getContentPane().add(jbrendirse, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, -1, -1));
 
-        jt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
-        jt3.addActionListener(new java.awt.event.ActionListener() {
+        posion3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        posion3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jt3ActionPerformed(evt);
+                posion3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 50, 50));
+        getContentPane().add(posion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 50, 50));
 
-        jt2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
-        jt2.addActionListener(new java.awt.event.ActionListener() {
+        posion2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        posion2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jt2ActionPerformed(evt);
+                posion2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 50, 50));
+        getContentPane().add(posion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 50, 50));
 
-        jt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
-        jt1.addActionListener(new java.awt.event.ActionListener() {
+        posion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        posion1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jt1ActionPerformed(evt);
+                posion1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 50, 50));
+        getContentPane().add(posion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 50, 50));
+
+        jToggleButton1.setText("SALIR");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
         vida1.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(vida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 110, 20));
@@ -135,41 +145,138 @@ public class Entrenador5 extends javax.swing.JFrame {
         vida2.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 110, 20));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo1.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt1ActionPerformed
+    private void posion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion1ActionPerformed
+        String resultado = mipokemon.UsarPocion(mipokemon);
+        Area1.append(resultado + "\n");
+        Mipocion = Mipocion + 1;
+        if (Mipocion == 3){
+            //jButton2.setEnabled(false);
+        }
+        int pos = (int)(Math.random()*100);
+        if (cont < 3){
+            if (pos < 40 && rival.vida <= 30){
+                String resultado2 = rival.UsarPocion(rival);
+                Area1.append(resultado2 + "\n");
+                cont = cont + 1;
+            }
+            else{
+                String resultado2 = rival.Atacar(mipokemon);
+                Area1.append(resultado2 + "\n");
+            }
+        }
+        else {
+            String resultado2 = rival.Atacar(mipokemon);
+            Area1.append(resultado2 + "\n");
+        }
+        
+        vida1.setText(mipokemon.MostrarEstado());
+        vida2.setText(rival.MostrarEstado());
+            
+              posion1.setBackground(new Color(255,251,32));
+              posion1.setVisible(false);
+              
+              
+              AnalizarSituacion();
+        
         String mostrar = "";
-        if(jt1.isSelected()){
+        if(posion1.isSelected()){
             mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
-              jt1.setBackground(new Color(255,251,32));
-              jt1.setVisible(false);
+              posion1.setBackground(new Color(255,251,32));
+              posion1.setVisible(false);
         }
-    }//GEN-LAST:event_jt1ActionPerformed
+    }//GEN-LAST:event_posion1ActionPerformed
 
-    private void jt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt2ActionPerformed
+    private void posion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion2ActionPerformed
+        String resultado = mipokemon.UsarPocion(mipokemon);
+        Area1.append(resultado + "\n");
+        Mipocion = Mipocion + 1;
+        if (Mipocion == 3){
+            //jButton2.setEnabled(false);
+        }
+        int pos = (int)(Math.random()*100);
+        if (cont < 3){
+            if (pos < 40 && rival.vida <= 30){
+                String resultado2 = rival.UsarPocion(rival);
+                Area1.append(resultado2 + "\n");
+                cont = cont + 1;
+            }
+            else{
+                String resultado2 = rival.Atacar(mipokemon);
+                Area1.append(resultado2 + "\n");
+            }
+        }
+        else {
+            String resultado2 = rival.Atacar(mipokemon);
+            Area1.append(resultado2 + "\n");
+        }
+        
+        vida1.setText(mipokemon.MostrarEstado());
+        vida2.setText(rival.MostrarEstado());
+            
+              posion2.setBackground(new Color(255,251,32));
+              posion2.setVisible(false);
+              
+              
+              AnalizarSituacion();
+        
         String mostrar = "";
-        if(jt2.isSelected()){
+        if(posion2.isSelected()){
             mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
-              jt2.setBackground(new Color(255,251,32));
-              jt2.setVisible(false);
+              posion2.setBackground(new Color(255,251,32));
+              posion2.setVisible(false);
         }
-    }//GEN-LAST:event_jt2ActionPerformed
-
-    private void jt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt3ActionPerformed
+    }//GEN-LAST:event_posion2ActionPerformed
+        int Mipocion=0;
+        int cont=0;
+    private void posion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion3ActionPerformed
+        String resultado = mipokemon.UsarPocion(mipokemon);
+        Area1.append(resultado + "\n");
+        Mipocion = Mipocion + 1;
+        if (Mipocion == 3){
+            //jButton2.setEnabled(false);
+        }
+        int pos = (int)(Math.random()*100);
+        if (cont < 3){
+            if (pos < 40 && rival.vida <= 30){
+                String resultado2 = rival.UsarPocion(rival);
+                Area1.append(resultado2 + "\n");
+                cont = cont + 1;
+            }
+            else{
+                String resultado2 = rival.Atacar(mipokemon);
+                Area1.append(resultado2 + "\n");
+            }
+        }
+        else {
+            String resultado2 = rival.Atacar(mipokemon);
+            Area1.append(resultado2 + "\n");
+        }
+        
+        vida1.setText(mipokemon.MostrarEstado());
+        vida2.setText(rival.MostrarEstado());
+            
+              posion3.setBackground(new Color(255,251,32));
+              posion3.setVisible(false);
+              
+              
+              AnalizarSituacion();
+        
         String mostrar = "";
-        if(jt3.isSelected()){
+        if(posion3.isSelected()){
             mostrar=txt2.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
             Area1.append(mostrar);
-              jt3.setBackground(new Color(255,251,32));
-              jt3.setVisible(false);
+              posion3.setBackground(new Color(255,251,32));
+              posion3.setVisible(false);
         }
-    }//GEN-LAST:event_jt3ActionPerformed
+    }//GEN-LAST:event_posion3ActionPerformed
     void AnalizarSituacion(){
         if (mipokemon.vida == 0) {
             Area1.append(mipokemon.nombre 
@@ -177,6 +284,10 @@ public class Entrenador5 extends javax.swing.JFrame {
                     + rival.nombre + " gana."+"\n");
             
             jbatacar.setEnabled(false);
+            jbrendirse.setEnabled(false);
+            posion1.setEnabled(false);
+            posion2.setEnabled(false);
+            posion3.setEnabled(false);
         }
         
         else if (rival.vida == 0) {
@@ -218,6 +329,10 @@ public class Entrenador5 extends javax.swing.JFrame {
             jbatacar.setVisible(false);
         }
     }//GEN-LAST:event_jbrendirseActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,13 +380,14 @@ public class Entrenador5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton jbatacar;
     private javax.swing.JToggleButton jbrendirse;
     public static javax.swing.JLabel jlb5;
-    private javax.swing.JToggleButton jt1;
-    private javax.swing.JToggleButton jt2;
-    private javax.swing.JToggleButton jt3;
-    private javax.swing.JTextField txt2;
+    private javax.swing.JToggleButton posion1;
+    private javax.swing.JToggleButton posion2;
+    private javax.swing.JToggleButton posion3;
+    public static javax.swing.JTextField txt2;
     private javax.swing.JLabel vida1;
     private javax.swing.JLabel vida2;
     // End of variables declaration//GEN-END:variables

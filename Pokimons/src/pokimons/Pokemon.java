@@ -98,6 +98,14 @@ public class Pokemon {
     public void sethPotions(int hPotions) {
         this.hPotions = hPotions;
     }
+
+    boolean setNombre() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    boolean setVida() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
      

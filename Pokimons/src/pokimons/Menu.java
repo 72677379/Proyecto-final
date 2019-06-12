@@ -39,6 +39,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         bBatalla = new javax.swing.JButton();
+        bsalir = new javax.swing.JToggleButton();
         jbtVaron = new javax.swing.JRadioButton();
         jbtMujer = new javax.swing.JRadioButton();
         pok1 = new javax.swing.JRadioButton();
@@ -47,34 +48,42 @@ public class Menu extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Nombre de usuario : ");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 21, 220, 36));
+
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 287, 36));
 
         jLabel8.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 0));
         jLabel8.setText("Sexo: ");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 60, 22));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 60, 22));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 0));
         jLabel9.setText("Elegir pokemon : ");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/groudon.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 197, 180));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 197, 180));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sceptile.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 201, 180));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 201, 180));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/suicune.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 200, 180));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, 200, 180));
 
         bBatalla.setText("Iniciar Batalla");
         bBatalla.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +91,15 @@ public class Menu extends javax.swing.JFrame {
                 bBatallaActionPerformed(evt);
             }
         });
-        getContentPane().add(bBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 470, 131, 35));
+        getContentPane().add(bBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 131, 30));
+
+        bsalir.setText("Salir");
+        bsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bsalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, 130, 30));
 
         sexo.add(jbtVaron);
         jbtVaron.setText("Hombre");
@@ -104,7 +121,7 @@ public class Menu extends javax.swing.JFrame {
                 pok1ActionPerformed(evt);
             }
         });
-        getContentPane().add(pok1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
+        getContentPane().add(pok1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
 
         pokemon.add(pok2);
         pok2.setText("sceptile");
@@ -113,14 +130,19 @@ public class Menu extends javax.swing.JFrame {
                 pok2ActionPerformed(evt);
             }
         });
-        getContentPane().add(pok2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, -1, -1));
+        getContentPane().add(pok2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
 
         pokemon.add(pok3);
         pok3.setText("suicune");
-        getContentPane().add(pok3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, -1, -1));
+        pok3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pok3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pok3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Pokemon.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 510));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_opt_1.jpg"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -146,22 +168,44 @@ public class Menu extends javax.swing.JFrame {
             String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
             entrenador.txt1.setText(a);   //obtiene el texto que se inserta en a
             entrenador.setVisible(true);
-            
+            this.dispose();
         }else if(jbtMujer.isSelected() && pok2.isSelected()){
+            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            entrenador3.txt2.setText(a);
             entrenador3.setVisible(true);
+            this.dispose();
         }else if (jbtMujer.isSelected() && pok3.isSelected()){
+            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            entrenador2.txt2.setText(a);
             entrenador2.setVisible(true);
+            this.dispose();
         }else if (jbtVaron.isSelected() && pok1.isSelected()){
+            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            entrenador4.txt2.setText(a);
             entrenador4.setVisible(true);
+            this.dispose();
         }else if (jbtVaron.isSelected() && pok2.isSelected()){
-           entrenador6.setVisible(true);
-        
+            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            entrenador6.txt2.setText(a);
+            entrenador6.setVisible(true);
+            this.dispose();
         }else if(jbtVaron.isSelected() && pok3.isSelected()){
-          entrenador5.setVisible(true);
+            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            entrenador5.txt2.setText(a);
+            entrenador5.setVisible(true);
+            this.dispose();
         }
-        JOptionPane.showMessageDialog(null, "Bienvenido "+txtNombre.getText() + ":"+"\n" + 
+        if(txtNombre.getText().isEmpty()&&!jbtMujer.isSelected()&&!jbtVaron.isSelected()&&!pok1.isSelected()&&!pok2.isSelected()
+                &&!pok3.isSelected()){
+            
+           
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Bienvenid@ "+txtNombre.getText() + ":"+"\n" + 
                 "soy el profesor Ouk y por la elección de tu primero" +"\n" +
                    "pokemon tendras que luchar contra mi nieto Gary");
+        }
+        
         
         
     }//GEN-LAST:event_bBatallaActionPerformed
@@ -182,8 +226,34 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_pok1ActionPerformed
 
     private void pok2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pok2ActionPerformed
-        
+        if(pok2.isSelected()){
+           //String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+           
+           
+           
+           
+           
+        }
     }//GEN-LAST:event_pok2ActionPerformed
+
+    private void pok3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pok3ActionPerformed
+        if(pok3.isSelected()){
+           //String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+           
+           
+           
+           
+           
+        }
+    }//GEN-LAST:event_pok3ActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void bsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_bsalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +292,7 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBatalla;
+    private javax.swing.JToggleButton bsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
