@@ -266,6 +266,10 @@ public class Menu extends javax.swing.JFrame {
         if (txtNombre.getText().length()== limite){
            evt.consume();
        }
+        else{
+            //JOptionPane.showMessageDialog(null,"debes digitar a lo mas 10 caracteres");
+        
+        }
 
     }//GEN-LAST:event_txtNombreKeyTyped
 
