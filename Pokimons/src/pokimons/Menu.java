@@ -5,7 +5,7 @@
  */
 package pokimons;
 
-import java.applet.AudioClip;
+//import java.applet.AudioClip;
 import javax.swing.JOptionPane;
 
 /**
