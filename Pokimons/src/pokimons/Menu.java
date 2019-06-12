@@ -82,7 +82,7 @@ public class Menu extends javax.swing.JFrame {
                 bBatallaActionPerformed(evt);
             }
         });
-        getContentPane().add(bBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 131, 35));
+        getContentPane().add(bBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 470, 131, 35));
 
         sexo.add(jbtVaron);
         jbtVaron.setText("Hombre");
@@ -108,6 +108,11 @@ public class Menu extends javax.swing.JFrame {
 
         pokemon.add(pok2);
         pok2.setText("sceptile");
+        pok2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pok2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(pok2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, -1, -1));
 
         pokemon.add(pok3);
@@ -129,7 +134,6 @@ public class Menu extends javax.swing.JFrame {
         Entrenador6 entrenador6 = new Entrenador6();
         
         entrenador.jlb1.setText(txtNombre.getText());
-        //entrenador.
         entrenador3.jlb2.setText(txtNombre.getText());
         entrenador2.jlb3.setText(txtNombre.getText());
         entrenador4.jlb4.setText(txtNombre.getText());
@@ -139,7 +143,10 @@ public class Menu extends javax.swing.JFrame {
         //entrenador.txtVaron.setText(txtNombre.getText());
        //String mostrar="";
         if(jbtMujer.isSelected() && pok1.isSelected()){ 
+            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            entrenador.txt1.setText(a);   //obtiene el texto que se inserta en a
             entrenador.setVisible(true);
+            
         }else if(jbtMujer.isSelected() && pok2.isSelected()){
             entrenador3.setVisible(true);
         }else if (jbtMujer.isSelected() && pok3.isSelected()){
@@ -165,11 +172,18 @@ public class Menu extends javax.swing.JFrame {
 
     private void pok1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pok1ActionPerformed
         if(pok1.isSelected()){
-           String m =(JOptionPane.showInputDialog("Desea poner un nombre al pokemon"));
+           //String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+           
+           
+           
            
            
         }
     }//GEN-LAST:event_pok1ActionPerformed
+
+    private void pok2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pok2ActionPerformed
+        
+    }//GEN-LAST:event_pok2ActionPerformed
 
     /**
      * @param args the command line arguments

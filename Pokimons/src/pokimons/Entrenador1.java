@@ -20,7 +20,9 @@ public class Entrenador1 extends javax.swing.JFrame {
     public Entrenador1() {
         initComponents();
         setLocationRelativeTo(null);//codigo para poner en el medio
-        setResizable(false);      
+        setResizable(false);
+        
+        
         
         
     }
@@ -44,14 +46,14 @@ public class Entrenador1 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Area1 = new javax.swing.JTextArea();
         jlb1 = new javax.swing.JLabel();
-        jt1 = new javax.swing.JToggleButton();
+        posion1 = new javax.swing.JToggleButton();
         jt2 = new javax.swing.JToggleButton();
         jt3 = new javax.swing.JToggleButton();
         jbrendirse = new javax.swing.JToggleButton();
         txt1 = new javax.swing.JTextField();
         vida1 = new javax.swing.JLabel();
         vida2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jl123456 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,6 +88,7 @@ public class Entrenador1 extends javax.swing.JFrame {
         });
         getContentPane().add(jb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
 
+        Area1.setEditable(false);
         Area1.setColumns(20);
         Area1.setRows(5);
         jScrollPane1.setViewportView(Area1);
@@ -95,13 +98,13 @@ public class Entrenador1 extends javax.swing.JFrame {
         jlb1.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jlb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 71, 80, 18));
 
-        jt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
-        jt1.addActionListener(new java.awt.event.ActionListener() {
+        posion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
+        posion1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jt1ActionPerformed(evt);
+                posion1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 316, 47, 51));
+        getContentPane().add(posion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 316, 47, 51));
 
         jt2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Poción_opt.png"))); // NOI18N
         jt2.addActionListener(new java.awt.event.ActionListener() {
@@ -136,13 +139,13 @@ public class Entrenador1 extends javax.swing.JFrame {
         getContentPane().add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 97, 98, -1));
 
         vida1.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(vida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 106, 25));
+        getContentPane().add(vida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 110, 20));
 
         vida2.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 216, 111, 27));
+        getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 216, 100, 20));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
+        jl123456.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        getContentPane().add(jl123456, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -163,8 +166,9 @@ void AnalizarSituacion() {
             jb1.setEnabled(false);
         }
     }
+       int cont=0;
     private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
-       double r1 = Math.random();
+       /*double r1 = Math.random();
         double r2 = Math.random();
         
         if (r1 > r2) {
@@ -180,26 +184,76 @@ void AnalizarSituacion() {
             
             String resultado = mipokemon.Atacar(rival);       
             Area1.append(resultado + "\n");            
+        }*/
+       String resultado = mipokemon.Atacar(rival);
+        Area1.append(resultado + "\n");
+        
+        int pos = (int)(Math.random()*100);
+        if (cont < 3){
+            if (pos < 25 && rival.vida <= 40){
+                String resultado2 = rival.UsarPocion(rival);
+                Area1.append(resultado2 + "\n");
+                cont = cont + 1;
+            }
+            else{
+                String resultado2 = rival.Atacar(mipokemon);
+                Area1.append(resultado2 + "\n");
+            }
         }
+        else {
+            String resultado2 = rival.Atacar(mipokemon);
+            Area1.append(resultado2 + "\n");
+        }
+        
+        
+        
         
         vida1.setText(mipokemon.MostrarEstado());
         vida2.setText(rival.MostrarEstado());
         
+        
         AnalizarSituacion();
     }//GEN-LAST:event_jb1ActionPerformed
-
-    private void jt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt1ActionPerformed
-        String mostrar = "";
-        if(jt1.isSelected()){
+       int Mipocion=0;
+    private void posion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion1ActionPerformed
+        /*String mostrar = "";
+        if(posion1.isSelected()){
             mostrar=txt1.getText()+"ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
-            Area1.append(mostrar);
-              jt1.setBackground(new Color(255,251,32));
-              jt1.setVisible(false);
-              //txt1.add(m);
-              
-              
+            Area1.append(mostrar);*/
+        
+        String resultado = mipokemon.UsarPocion(mipokemon);
+        Area1.append(resultado + "\n");
+        Mipocion = Mipocion + 1;
+        if (Mipocion == 3){
+            //jButton2.setEnabled(false);
         }
-    }//GEN-LAST:event_jt1ActionPerformed
+        int pos = (int)(Math.random()*100);
+        if (cont < 3){
+            if (pos < 40 && rival.vida <= 30){
+                String resultado2 = rival.UsarPocion(rival);
+                Area1.append(resultado2 + "\n");
+                cont = cont + 1;
+            }
+            else{
+                String resultado2 = rival.Atacar(mipokemon);
+                Area1.append(resultado2 + "\n");
+            }
+        }
+        else {
+            String resultado2 = rival.Atacar(mipokemon);
+            Area1.append(resultado2 + "\n");
+        }
+        
+        vida1.setText(mipokemon.MostrarEstado());
+        vida2.setText(rival.MostrarEstado());
+            
+              posion1.setBackground(new Color(255,251,32));
+              posion1.setVisible(false);
+              
+              
+              AnalizarSituacion();
+        
+    }//GEN-LAST:event_posion1ActionPerformed
 
     private void jbrendirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbrendirseActionPerformed
         if(jbrendirse.isSelected()){
@@ -273,14 +327,14 @@ void AnalizarSituacion() {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jb1;
     private javax.swing.JToggleButton jbrendirse;
+    private javax.swing.JLabel jl123456;
     public static javax.swing.JLabel jlb1;
-    private javax.swing.JToggleButton jt1;
     private javax.swing.JToggleButton jt2;
     private javax.swing.JToggleButton jt3;
+    private javax.swing.JToggleButton posion1;
     public static javax.swing.JTextField txt1;
     private javax.swing.JLabel vida1;
     private javax.swing.JLabel vida2;
