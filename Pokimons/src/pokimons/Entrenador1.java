@@ -183,6 +183,10 @@ void AnalizarSituacion() {
                     + mipokemon.nombre + " gana."+"\n");
             
             jb1.setEnabled(false);
+            jbrendirse.setEnabled(false);
+            posion1.setEnabled(false);
+            posion2.setEnabled(false);
+            posion3.setEnabled(false);
         }
     }
        int cont=0;

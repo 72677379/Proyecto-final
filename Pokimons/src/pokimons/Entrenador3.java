@@ -173,6 +173,10 @@ public class Entrenador3 extends javax.swing.JFrame {
                     + mipokemon.nombre + " gana."+"\n");
             
             jbatacar.setEnabled(false);
+            jbrendirse.setEnabled(false);
+            posion1.setEnabled(false);
+            posion2.setEnabled(false);
+            posion3.setEnabled(false);
         }
     
 }
@@ -211,7 +215,7 @@ public class Entrenador3 extends javax.swing.JFrame {
         }
         int pos = (int)(Math.random()*100);
         if (cont < 3){
-            if (pos < 40 && rival.vida <= 30){
+            if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
                 Area1.append(resultado2 + "\n");
                 cont = cont + 1;
@@ -253,7 +257,7 @@ public class Entrenador3 extends javax.swing.JFrame {
         }
         int pos = (int)(Math.random()*100);
         if (cont < 3){
-            if (pos < 40 && rival.vida <= 30){
+            if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
                 Area1.append(resultado2 + "\n");
                 cont = cont + 1;
@@ -295,7 +299,7 @@ public class Entrenador3 extends javax.swing.JFrame {
         }
         int pos = (int)(Math.random()*100);
         if (cont < 3){
-            if (pos < 40 && rival.vida <= 30){
+            if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
                 Area1.append(resultado2 + "\n");
                 cont = cont + 1;

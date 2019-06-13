@@ -177,6 +177,10 @@ void AnalizarSituacion() {
                     + mipokemon.nombre + " gana."+"\n");
             
             jb2.setEnabled(false);
+            jbrendirse.setEnabled(false);
+            posion1.setEnabled(false);
+            posion2.setEnabled(false);
+            posion3.setEnabled(false);
         }
     }
     private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed
@@ -220,7 +224,7 @@ void AnalizarSituacion() {
         }
         int pos = (int)(Math.random()*100);
         if (cont < 3){
-            if (pos < 40 && rival.vida <= 30){
+            if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
                 Area1.append(resultado2 + "\n");
                 cont = cont + 1;
@@ -262,7 +266,7 @@ void AnalizarSituacion() {
         }
         int pos = (int)(Math.random()*100);
         if (cont < 3){
-            if (pos < 40 && rival.vida <= 30){
+            if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
                 Area1.append(resultado2 + "\n");
                 cont = cont + 1;
@@ -305,7 +309,7 @@ void AnalizarSituacion() {
         }
         int pos = (int)(Math.random()*100);
         if (cont < 3){
-            if (pos < 40 && rival.vida <= 30){
+            if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
                 Area1.append(resultado2 + "\n");
                 cont = cont + 1;
