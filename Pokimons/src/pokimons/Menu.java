@@ -98,6 +98,11 @@ public class Menu extends javax.swing.JFrame {
                 bBatallaActionPerformed(evt);
             }
         });
+        bBatalla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                bBatallaKeyTyped(evt);
+            }
+        });
         getContentPane().add(bBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 131, 30));
 
         bsalir.setText("Salir");
@@ -176,33 +181,37 @@ public class Menu extends javax.swing.JFrame {
         
         //entrenador.txtVaron.setText(txtNombre.getText());
        //String mostrar="";
-        if(jbtMujer.isSelected() && pok1.isSelected()){ 
-            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+       String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+        if(jbtMujer.isSelected() && pok1.isSelected()){
+            
+            
             entrenador.txt1.setText(a);   //obtiene el texto que se inserta en a
             entrenador.setVisible(true);
+            
             this.dispose();
         }else if(jbtMujer.isSelected() && pok2.isSelected()){
-            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            
+            
             entrenador3.txt2.setText(a);
             entrenador3.setVisible(true);
             this.dispose();
         }else if (jbtMujer.isSelected() && pok3.isSelected()){
-            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            
             entrenador2.txt2.setText(a);
             entrenador2.setVisible(true);
             this.dispose();
         }else if (jbtVaron.isSelected() && pok1.isSelected()){
-            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            
             entrenador4.txt2.setText(a);
             entrenador4.setVisible(true);
             this.dispose();
         }else if (jbtVaron.isSelected() && pok2.isSelected()){
-            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            
             entrenador6.txt2.setText(a);
             entrenador6.setVisible(true);
             this.dispose();
         }else if(jbtVaron.isSelected() && pok3.isSelected()){
-            String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+            
             entrenador5.txt2.setText(a);
             entrenador5.setVisible(true);
             this.dispose();
@@ -286,6 +295,11 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel5MouseClicked
 
+    private void bBatallaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bBatallaKeyTyped
+        
+       
+    }//GEN-LAST:event_bBatallaKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -323,7 +337,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bBatalla;
+    public static javax.swing.JButton bBatalla;
     private javax.swing.JToggleButton bsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

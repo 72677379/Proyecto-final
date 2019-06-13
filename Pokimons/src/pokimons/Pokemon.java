@@ -15,15 +15,19 @@ public class Pokemon {
        this.vida=40+nivel*5;
     }
    
-    String MostrarEstado() {
+    public String MostrarEstado() {
         String estado = /*this.nombre + " / " +*/ "Vida : "+this.vida
                 + " HP" /*+"\n"+"Nivel : "+ this.nivel + " / "*/;
         return estado;
     }
+    public String Nivel(){
+      String niv="NIVEL : " +this.nivel;
+      return niv;
+    }
     public String Atacar(Pokemon contrincante) {
         String resultado = "";
         
-        int ataque = (int)((new Random().nextInt(5))+5);        
+        int ataque = (int)(Math.random()*5 + 5);        
         int critico = (int) (Math.random() * 100);
         int probabilidad =(int) (Math.random() * 100);
        contrincante.vida = contrincante.vida - ataque;
@@ -31,7 +35,7 @@ public class Pokemon {
        if (critico <= 20){
             ataque = (int)(ataque*2);
         }
-        else if (probabilidad <= 15){
+       if (probabilidad <= 15){
             ataque = 0;
         }
         
@@ -45,7 +49,7 @@ public class Pokemon {
             resultado = contrincante.nombre 
                     + " recibió un ataque crítico de " + ataque;
         }
-        else if (probabilidad <= 15){
+        if (probabilidad <= 15){
             resultado = contrincante.nombre + " esquivo el ataque.";
         }
         else {
@@ -55,18 +59,25 @@ public class Pokemon {
         
         return resultado; 
 }
-    public String UsarPocion(Pokemon contrincante){
-        String resultado = "";
+    public String UsarPocion(Pokemon rival){
+        String hp = "";
+        int HP = this.vida + 15;
+        rival.vida =  HP;
+        hp = rival.nombre + " ha usado poción, su vida aumenta a " + HP;
+        return hp;
+    
+    /*String resultado = "";
         contrincante.vida = contrincante.vida + 15;
         resultado = contrincante.nombre + " uso una poción";
-        return resultado;
+        return resultado;*/
     }
     public int usarHp(){
       return ((vida*25)/100);
       
+   
+    
     
     }
-
     public String getNombre() {
         return nombre;
     }
@@ -75,29 +86,7 @@ public class Pokemon {
         this.nombre = nombre;
     }
 
-    public int getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-
-    public int getVida() {
-        return vida;
-    }
-
-    public void setVida(int vida) {
-        this.vida = vida;
-    }
-
-    public int gethPotions() {
-        return hPotions;
-    }
-
-    public void sethPotions(int hPotions) {
-        this.hPotions = hPotions;
-    }
+    
 
     boolean setNombre() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
