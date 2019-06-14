@@ -213,6 +213,9 @@ void AnalizarSituacion() {
         if (jbrendirse.isSelected()){
             JOptionPane.showMessageDialog(null, jlb3.getText()+" se ha rendido.");
             jb2.setVisible(false);
+            posion1.setEnabled(false);
+            posion2.setEnabled(false);
+            posion3.setEnabled(false);
         }
     }//GEN-LAST:event_jbrendirseActionPerformed
 

@@ -284,6 +284,9 @@ void AnalizarSituacion() {
         if(jbrendirse.isSelected()){
             JOptionPane.showMessageDialog(null, jlb1.getText()+" se ha rendido.");
             jb1.setEnabled(false);
+            posion1.setEnabled(false);
+            posion2.setEnabled(false);
+            posion3.setEnabled(false);
             //4
         }
         
