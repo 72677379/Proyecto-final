@@ -30,12 +30,12 @@ public class Pokemon {
         int ataque = (int)(Math.random()*5 + 5);        
         int critico = (int) (Math.random() * 100);
         int probabilidad =(int) (Math.random() * 100);
-       contrincante.vida = contrincante.vida - ataque;
+       
        
        if (critico <= 20){
             ataque = (int)(ataque*2);
         }
-       if (probabilidad <= 15){
+       else if  (probabilidad <= 15){
             ataque = 0;
         }
         
@@ -49,7 +49,7 @@ public class Pokemon {
             resultado = contrincante.nombre 
                     + " recibió un ataque crítico de " + ataque;
         }
-        if (probabilidad <= 15){
+        else if (probabilidad <= 15){
             resultado = contrincante.nombre + " esquivo el ataque.";
         }
         else {
@@ -71,12 +71,12 @@ public class Pokemon {
         resultado = contrincante.nombre + " uso una poción";
         return resultado;*/
     }
-    public int usarHp(){
-      return ((vida*25)/100);
-      
-   
-    
-    
+    public String usarHprival(Pokemon contrin){
+      String hp="";
+      int HP =this.vida+25;
+      contrin.vida=HP;
+         return null;
+     
     }
     public String getNombre() {
         return nombre;

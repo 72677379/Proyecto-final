@@ -18,7 +18,7 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);//codigo para poner en el medio
         setResizable(false); //esto es para no modificar el frame
-        
+       
         
     }
 
@@ -165,12 +165,16 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bBatallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBatallaActionPerformed
+        
+        
+        
         Entrenador1 entrenador = new Entrenador1();
         Entrenador2 entrenador2 =new Entrenador2();
         Entrenador3 entrenador3 = new Entrenador3();
         Entrenador4 entrenador4 = new Entrenador4();
         Entrenador5 entrenador5 = new Entrenador5();
         Entrenador6 entrenador6 = new Entrenador6();
+        ElegirNombre nombre = new ElegirNombre();
         
         entrenador.jlb1.setText(txtNombre.getText());
         entrenador3.jlb2.setText(txtNombre.getText());
@@ -179,40 +183,44 @@ public class Menu extends javax.swing.JFrame {
         entrenador5.jlb5.setText(txtNombre.getText());
         entrenador6.jlb6.setText(txtNombre.getText());
         
+        
         //entrenador.txtVaron.setText(txtNombre.getText());
        //String mostrar="";
-       String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
-        if(jbtMujer.isSelected() && pok1.isSelected()){
+       //String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
+       
+       
+        
+       if(jbtMujer.isSelected() && pok1.isSelected() && !txtNombre.getText().isEmpty()){
+          
+           entrenador.setVisible(true);
+            //entrenador.txt1.setText(a);   //obtiene el texto que se inserta en a
             
-            
-            entrenador.txt1.setText(a);   //obtiene el texto que se inserta en a
-            entrenador.setVisible(true);
             
             this.dispose();
         }else if(jbtMujer.isSelected() && pok2.isSelected()){
             
             
-            entrenador3.txt2.setText(a);
+            //entrenador3.txt2.setText(a);
             entrenador3.setVisible(true);
             this.dispose();
         }else if (jbtMujer.isSelected() && pok3.isSelected()){
             
-            entrenador2.txt2.setText(a);
+            //entrenador2.txt2.setText(a);
             entrenador2.setVisible(true);
             this.dispose();
         }else if (jbtVaron.isSelected() && pok1.isSelected()){
             
-            entrenador4.txt2.setText(a);
+            //entrenador4.txt2.setText(a);
             entrenador4.setVisible(true);
             this.dispose();
         }else if (jbtVaron.isSelected() && pok2.isSelected()){
             
-            entrenador6.txt2.setText(a);
+            //entrenador6.txt2.setText(a);
             entrenador6.setVisible(true);
             this.dispose();
         }else if(jbtVaron.isSelected() && pok3.isSelected()){
             
-            entrenador5.txt2.setText(a);
+            //entrenador5.txt2.setText(a);
             entrenador5.setVisible(true);
             this.dispose();
         }
@@ -279,9 +287,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_bsalirActionPerformed
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-       
-        int limite = 10;
-        if (txtNombre.getText().length()== limite){
+        int limite=10;
+        if (txtNombre.getText().length()==limite){
            evt.consume();
        }
         else{

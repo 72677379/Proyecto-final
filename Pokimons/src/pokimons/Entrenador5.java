@@ -188,13 +188,7 @@ public class Entrenador5 extends javax.swing.JFrame {
               
               AnalizarSituacion();
         
-        String mostrar = "";
-        if(posion1.isSelected()){
-            mostrar=txt2.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
-            Area1.append(mostrar);
-              posion1.setBackground(new Color(255,251,32));
-              posion1.setVisible(false);
-        }
+        
     }//GEN-LAST:event_posion1ActionPerformed
 
     private void posion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion2ActionPerformed
@@ -230,13 +224,8 @@ public class Entrenador5 extends javax.swing.JFrame {
               
               AnalizarSituacion();
         
-        String mostrar = "";
-        if(posion2.isSelected()){
-            mostrar=txt2.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
-            Area1.append(mostrar);
-              posion2.setBackground(new Color(255,251,32));
-              posion2.setVisible(false);
-        }
+        
+        
     }//GEN-LAST:event_posion2ActionPerformed
         int Mipocion=0;
         int cont=0;
@@ -273,13 +262,8 @@ public class Entrenador5 extends javax.swing.JFrame {
               
               AnalizarSituacion();
         
-        String mostrar = "";
-        if(posion3.isSelected()){
-            mostrar=txt2.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
-            Area1.append(mostrar);
-              posion3.setBackground(new Color(255,251,32));
-              posion3.setVisible(false);
-        }
+        
+        
     }//GEN-LAST:event_posion3ActionPerformed
     void AnalizarSituacion(){
         if (mipokemon.vida == 0) {

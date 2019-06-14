@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class Entrenador1 extends javax.swing.JFrame {
      Pokemon mipokemon = new Pokemon("Groudon");
-     Pokemon rival = new Pokemon("Sceptile");
+     Pokemonrival rival = new Pokemonrival("Sceptile");
      int cont=0;
      
    
@@ -200,10 +200,8 @@ void AnalizarSituacion() {
     }
        
     private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
-       
+       mipokemon.nombre=txt1.getText();   //recibe el sobrenombre 
        String resultado = mipokemon.Atacar(rival); //pokemon ataca rival
-       
-       
        Area1.append(resultado+ "\n");
         
         int pos = (int)(Math.random()*100);
