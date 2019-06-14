@@ -165,7 +165,11 @@ public class Entrenador1 extends javax.swing.JFrame {
 
         vida2.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 216, 130, 20));
+
+        nivel1.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(nivel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 74, 80, 20));
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 74, 100, 20));
 
         jl123456.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo1.jpg"))); // NOI18N
@@ -430,4 +434,8 @@ void AnalizarSituacion() {
     public static javax.swing.JLabel vida1;
     private static javax.swing.JLabel vida2;
     // End of variables declaration//GEN-END:variables
+
+    void isVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

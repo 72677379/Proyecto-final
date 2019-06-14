@@ -40,7 +40,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        bBatalla = new javax.swing.JButton();
+        batalla = new javax.swing.JButton();
         bsalir = new javax.swing.JToggleButton();
         jbtVaron = new javax.swing.JRadioButton();
         jbtMujer = new javax.swing.JRadioButton();
@@ -92,18 +92,18 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, 200, 180));
 
-        bBatalla.setText("Iniciar Batalla");
-        bBatalla.addActionListener(new java.awt.event.ActionListener() {
+        batalla.setText("Continuar");
+        batalla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bBatallaActionPerformed(evt);
+                batallaActionPerformed(evt);
             }
         });
-        bBatalla.addKeyListener(new java.awt.event.KeyAdapter() {
+        batalla.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                bBatallaKeyTyped(evt);
+                batallaKeyTyped(evt);
             }
         });
-        getContentPane().add(bBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 131, 30));
+        getContentPane().add(batalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 131, 30));
 
         bsalir.setText("Salir");
         bsalir.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +164,7 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bBatallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBatallaActionPerformed
+    private void batallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batallaActionPerformed
         
         Entrenador1 entrenador = new Entrenador1();
         Entrenador2 entrenador2 =new Entrenador2();
@@ -189,7 +189,7 @@ public class Menu extends javax.swing.JFrame {
        
        
         
-       if(jbtMujer.isSelected() && pok1.isSelected() && !txtNombre.getText().isEmpty()){
+       /*if(jbtMujer.isSelected() && pok1.isSelected() && txtNombre.getText().isEmpty()){
           
             //entrenador.txt1.setText(a);   //obtiene el texto que se inserta en a            
             
@@ -215,22 +215,17 @@ public class Menu extends javax.swing.JFrame {
             
             
         }else if(jbtVaron.isSelected() && pok3.isSelected()){
-            //entrenador5.txt2.setText(a);
+            //entrenador5.txt2.setText(a);*/
             
-            
-            
-        }if (((((txtNombre.getText().isEmpty() || jbtMujer.isSelected()) || jbtVaron.isSelected()) || pok1.isSelected()) || pok2.isSelected())
-                ||pok3.isSelected()){
-            JOptionPane.showMessageDialog(null, "Complete todos los datos, por favor. ");
-            
-        }
-        /*else{
-            JOptionPane.showMessageDialog(null, "Bienvenid@ "+txtNombre.getText() + ":"+"\n" +
-                    "soy el profesor Ouk y por la elección de tu primero" +"\n" +
-                    "pokemon tendras que luchar contra mi nieto Gary");
         
-        }        */
-    }//GEN-LAST:event_bBatallaActionPerformed
+       ElegirNombre nombre = new ElegirNombre();
+        nombre.setVisible(true);
+        
+        
+        /*else{
+            JOptionPane.showMessageDialog(null, "Complete todos los datos, por favor. ");
+        }*/
+    }//GEN-LAST:event_batallaActionPerformed
 
     private void jbtMujerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtMujerActionPerformed
         // TODO add your handling code here:
@@ -238,6 +233,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void pok1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pok1ActionPerformed
         if(pok1.isSelected()){
+        
            //String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
            
            
@@ -249,6 +245,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void pok2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pok2ActionPerformed
         if(pok2.isSelected()){
+            
            //String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
            
            
@@ -260,6 +257,8 @@ public class Menu extends javax.swing.JFrame {
 
     private void pok3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pok3ActionPerformed
         if(pok3.isSelected()){
+            
+            
            //String a =(JOptionPane.showInputDialog(this,"Desea poner un nombre al pokemon"));
            
            
@@ -293,10 +292,10 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void bBatallaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bBatallaKeyTyped
+    private void batallaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_batallaKeyTyped
         
        
-    }//GEN-LAST:event_bBatallaKeyTyped
+    }//GEN-LAST:event_batallaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -335,7 +334,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JButton bBatalla;
+    public static javax.swing.JButton batalla;
     private javax.swing.JToggleButton bsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

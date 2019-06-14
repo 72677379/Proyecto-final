@@ -400,4 +400,8 @@ public class Entrenador6 extends javax.swing.JFrame {
     private javax.swing.JLabel vida1;
     private javax.swing.JLabel vida2;
     // End of variables declaration//GEN-END:variables
+
+    void isVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
