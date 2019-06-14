@@ -8,6 +8,7 @@ package pokimons;
 //import java.applet.AudioClip;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import static pokimons.Entrenador1.vida1;
 import static pokimons.Entrenador2.jlb3;
 
 /**
@@ -204,16 +205,17 @@ public class Entrenador3 extends javax.swing.JFrame {
         
         AnalizarSituacion();
     }//GEN-LAST:event_jbatacarActionPerformed
-    int Mipocion=0;
-    int cont=0;
+    //int Mipocion=0;
+    //int cont=0;
     private void posion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion1ActionPerformed
-        String resultado = mipokemon.UsarPocion(mipokemon);
-        Area1.append(resultado + "\n");
-        Mipocion = Mipocion + 1;
-        if (Mipocion == 3){
-            //jButton2.setEnabled(false);
-        }
-        int pos = (int)(Math.random()*100);
+        String mostrar = mipokemon.UsarPocion(mipokemon);
+        Area1.append(mostrar + "\n");
+        vida1.setText(mipokemon.MostrarEstado());
+        posion1.setEnabled(false); 
+        
+        
+        
+        /*int pos = (int)(Math.random()*100);
         if (cont < 3){
             if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
@@ -229,9 +231,9 @@ public class Entrenador3 extends javax.swing.JFrame {
             String resultado2 = rival.Atacar(mipokemon);
             Area1.append(resultado2 + "\n");
         }
-        
-        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
-        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
+        */
+        //vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        //vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
             
               posion1.setBackground(new Color(255,251,32));
               posion1.setVisible(false);
@@ -239,17 +241,24 @@ public class Entrenador3 extends javax.swing.JFrame {
               
               AnalizarSituacion();
         
-        
+        /*String most = "";
+        if(posion1.isSelected()){
+            mostrar=txt1.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(most);
+              posion1.setBackground(new Color(255,251,32));
+              posion1.setVisible(false);
+        }*/
     }//GEN-LAST:event_posion1ActionPerformed
 
     private void posion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion2ActionPerformed
-        String resultado = mipokemon.UsarPocion(mipokemon);
-        Area1.append(resultado + "\n");
-        Mipocion = Mipocion + 1;
-        if (Mipocion == 3){
-            //jButton2.setEnabled(false);
-        }
-        int pos = (int)(Math.random()*100);
+        String mostrar = mipokemon.UsarPocion(mipokemon);
+        Area1.append(mostrar + "\n");
+        vida1.setText(mipokemon.MostrarEstado());
+        posion2.setEnabled(false); 
+        
+        
+        
+        /*int pos = (int)(Math.random()*100);
         if (cont < 3){
             if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
@@ -265,9 +274,9 @@ public class Entrenador3 extends javax.swing.JFrame {
             String resultado2 = rival.Atacar(mipokemon);
             Area1.append(resultado2 + "\n");
         }
-        
-        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
-        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
+        */
+        //vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        //vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
             
               posion2.setBackground(new Color(255,251,32));
               posion2.setVisible(false);
@@ -275,17 +284,24 @@ public class Entrenador3 extends javax.swing.JFrame {
               
               AnalizarSituacion();
         
-        
+        /*String most = "";
+        if(posion1.isSelected()){
+            mostrar=txt1.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(most);
+              posion1.setBackground(new Color(255,251,32));
+              posion1.setVisible(false);
+        }*/
     }//GEN-LAST:event_posion2ActionPerformed
 
     private void posion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion3ActionPerformed
-        String resultado = mipokemon.UsarPocion(mipokemon);
-        Area1.append(resultado + "\n");
-        Mipocion = Mipocion + 1;
-        if (Mipocion == 3){
-            //jButton2.setEnabled(false);
-        }
-        int pos = (int)(Math.random()*100);
+        String mostrar = mipokemon.UsarPocion(mipokemon);
+        Area1.append(mostrar + "\n");
+        vida1.setText(mipokemon.MostrarEstado());
+        posion3.setEnabled(false); 
+        
+        
+        
+        /*int pos = (int)(Math.random()*100);
         if (cont < 3){
             if (pos < 25 && rival.vida <= 40){
                 String resultado2 = rival.UsarPocion(rival);
@@ -301,9 +317,9 @@ public class Entrenador3 extends javax.swing.JFrame {
             String resultado2 = rival.Atacar(mipokemon);
             Area1.append(resultado2 + "\n");
         }
-        
-        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
-        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
+        */
+        //vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
+        //vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
             
               posion3.setBackground(new Color(255,251,32));
               posion3.setVisible(false);
@@ -311,7 +327,13 @@ public class Entrenador3 extends javax.swing.JFrame {
               
               AnalizarSituacion();
         
-        
+        /*String most = "";
+        if(posion1.isSelected()){
+            mostrar=txt1.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
+            Area1.append(most);
+              posion1.setBackground(new Color(255,251,32));
+              posion1.setVisible(false);
+        }*/
     }//GEN-LAST:event_posion3ActionPerformed
 
     private void jbrendirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbrendirseActionPerformed

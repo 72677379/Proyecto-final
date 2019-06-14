@@ -6,8 +6,8 @@ public class Pokimons {
         Menu menu = new Menu();
         menu.setVisible(true);
         
-        Menu audio = new Menu();
-        audio.setVisible(true);
+        /*Menu audio = new Menu();
+        audio.setVisible(true);*/
          //Suicune a = new Suicune();
          
         

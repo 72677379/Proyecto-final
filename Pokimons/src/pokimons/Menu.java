@@ -166,15 +166,14 @@ public class Menu extends javax.swing.JFrame {
 
     private void bBatallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBatallaActionPerformed
         
-        
-        
         Entrenador1 entrenador = new Entrenador1();
         Entrenador2 entrenador2 =new Entrenador2();
         Entrenador3 entrenador3 = new Entrenador3();
         Entrenador4 entrenador4 = new Entrenador4();
         Entrenador5 entrenador5 = new Entrenador5();
         Entrenador6 entrenador6 = new Entrenador6();
-        ElegirNombre nombre = new ElegirNombre();
+        
+       
         
         entrenador.jlb1.setText(txtNombre.getText());
         entrenador3.jlb2.setText(txtNombre.getText());
@@ -192,53 +191,45 @@ public class Menu extends javax.swing.JFrame {
         
        if(jbtMujer.isSelected() && pok1.isSelected() && !txtNombre.getText().isEmpty()){
           
-           entrenador.setVisible(true);
-            //entrenador.txt1.setText(a);   //obtiene el texto que se inserta en a
+            //entrenador.txt1.setText(a);   //obtiene el texto que se inserta en a            
             
             
-            this.dispose();
-        }else if(jbtMujer.isSelected() && pok2.isSelected()){
-            
-            
+        }else if(jbtMujer.isSelected() && pok2.isSelected()){           
             //entrenador3.txt2.setText(a);
-            entrenador3.setVisible(true);
-            this.dispose();
+            
+            
+            
         }else if (jbtMujer.isSelected() && pok3.isSelected()){
-            
             //entrenador2.txt2.setText(a);
-            entrenador2.setVisible(true);
-            this.dispose();
+            
+            
+            
         }else if (jbtVaron.isSelected() && pok1.isSelected()){
-            
             //entrenador4.txt2.setText(a);
-            entrenador4.setVisible(true);
-            this.dispose();
+            
+            
+            
         }else if (jbtVaron.isSelected() && pok2.isSelected()){
-            
             //entrenador6.txt2.setText(a);
-            entrenador6.setVisible(true);
-            this.dispose();
+            
+            
+            
         }else if(jbtVaron.isSelected() && pok3.isSelected()){
-            
             //entrenador5.txt2.setText(a);
-            entrenador5.setVisible(true);
-            this.dispose();
-        }
-        if(txtNombre.getText().isEmpty()&&!jbtMujer.isSelected()&&!jbtVaron.isSelected()&&!pok1.isSelected()&&!pok2.isSelected()
-                &&!pok3.isSelected()){
             
-           
+            
+            
+        }if (((((txtNombre.getText().isEmpty() || jbtMujer.isSelected()) || jbtVaron.isSelected()) || pok1.isSelected()) || pok2.isSelected())
+                ||pok3.isSelected()){
+            JOptionPane.showMessageDialog(null, "Complete todos los datos, por favor. ");
+            
         }
-        else{
-            JOptionPane.showMessageDialog(null, "Bienvenid@ "+txtNombre.getText() + ":"+"\n" + 
-                "soy el profesor Ouk y por la elección de tu primero" +"\n" +
-                   "pokemon tendras que luchar contra mi nieto Gary");
-        }
+        /*else{
+            JOptionPane.showMessageDialog(null, "Bienvenid@ "+txtNombre.getText() + ":"+"\n" +
+                    "soy el profesor Ouk y por la elección de tu primero" +"\n" +
+                    "pokemon tendras que luchar contra mi nieto Gary");
         
-        
-       
-        
-        
+        }        */
     }//GEN-LAST:event_bBatallaActionPerformed
 
     private void jbtMujerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtMujerActionPerformed
@@ -353,11 +344,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jbtMujer;
-    private javax.swing.JRadioButton jbtVaron;
+    public static javax.swing.JRadioButton jbtMujer;
+    public static javax.swing.JRadioButton jbtVaron;
     public static javax.swing.JRadioButton pok1;
-    private javax.swing.JRadioButton pok2;
-    private javax.swing.JRadioButton pok3;
+    public static javax.swing.JRadioButton pok2;
+    public static javax.swing.JRadioButton pok3;
     private javax.swing.ButtonGroup pokemon;
     private javax.swing.ButtonGroup sexo;
     public static javax.swing.JTextField txtNombre;

@@ -5,6 +5,10 @@
  */
 package pokimons;
 
+import javax.swing.JOptionPane;
+import static pokimons.Menu.pok1;
+import static pokimons.Menu.txtNombre;
+
 /**
  *
  * @author Usuario
@@ -27,78 +31,91 @@ public class ElegirNombre extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        Establecer = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jxtexto = new javax.swing.JTextField();
+        jlbtexto = new javax.swing.JLabel();
+        jbno = new javax.swing.JToggleButton();
+        jbsi = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jButton1.setText("Predeterminado");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jxtexto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jxtextoActionPerformed(evt);
             }
         });
 
-        Establecer.setText("Establecer");
+        jlbtexto.setText("!Desea Cambiar nombre¡");
 
-        jLabel2.setText("!Desea Cambiar nombre¡");
+        jbno.setText("NO");
+        jbno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbnoActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Predeterminado");
+        jbsi.setText("SI");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(61, 61, 61)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                            .addComponent(Establecer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addComponent(jlbtexto)
+                .addGap(18, 18, 18)
+                .addComponent(jxtexto, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jbno)
+                .addGap(88, 88, 88)
+                .addComponent(jbsi)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jxtexto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbtexto, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Establecer, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(jbno)
+                    .addComponent(jbsi))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jxtextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jxtextoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jxtextoActionPerformed
+
+    private void jbnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnoActionPerformed
+        Entrenador1 entrenador = new Entrenador1();
+        Entrenador2 entrenador2 =new Entrenador2();
+        Entrenador3 entrenador3 = new Entrenador3();
+        Entrenador4 entrenador4 = new Entrenador4();
+        Entrenador5 entrenador5 = new Entrenador5();
+        Entrenador6 entrenador6 = new Entrenador6();
+        
+         entrenador.setVisible(true);
+         entrenador2.setVisible(true);
+         entrenador3.setVisible(true);
+         entrenador4.setVisible(true);
+         entrenador5.setVisible(true);
+         entrenador6.setVisible(true);
+         this.dispose();
+         
+         
+         
+         
+         
+         
+    }//GEN-LAST:event_jbnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,11 +153,11 @@ public class ElegirNombre extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Establecer;
-    public static javax.swing.JButton jButton1;
-    public static javax.swing.JButton jButton2;
-    public static javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    public static javax.swing.JTextField jTextField1;
+    private javax.swing.JToggleButton jbno;
+    private javax.swing.JToggleButton jbsi;
+    private javax.swing.JLabel jlbtexto;
+    public static javax.swing.JTextField jxtexto;
     // End of variables declaration//GEN-END:variables
+
+
 }

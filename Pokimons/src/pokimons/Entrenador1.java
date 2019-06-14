@@ -5,7 +5,7 @@
  */
 package pokimons;
 
-import java.applet.AudioClip;
+//import java.applet.AudioClip;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -23,9 +23,9 @@ public class Entrenador1 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);//codigo para poner en el medio
         setResizable(false);
-        AudioClip Sound;
+        /*AudioClip Sound;
         Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Sonido/Cancion.wav"));
-        Sound.play();
+        Sound.play();*/
         vida1.setText(mipokemon.MostrarEstado());  //muestra en el frame la vida
         vida2.setText(rival.MostrarEstado());
         nivel1.setText(mipokemon.Nivel());
