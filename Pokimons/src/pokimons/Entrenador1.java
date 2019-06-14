@@ -225,8 +225,6 @@ void AnalizarSituacion() {
         
         vida1.setText(mipokemon.MostrarEstado());
         vida2.setText(rival.MostrarEstado());
-        //vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
-        //vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
         
         
         
