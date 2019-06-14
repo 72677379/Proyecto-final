@@ -25,6 +25,8 @@ public class ElegirNombre extends javax.swing.JFrame {
      */
     public ElegirNombre() {
         initComponents();
+        setLocationRelativeTo(null);//codigo para poner en el medio
+        setResizable(false);
     }
 
     /**
@@ -41,17 +43,22 @@ public class ElegirNombre extends javax.swing.JFrame {
         jbno = new javax.swing.JToggleButton();
         jbsi = new javax.swing.JToggleButton();
         batalla = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         texto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textoActionPerformed(evt);
             }
         });
+        getContentPane().add(texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 11, 158, 34));
 
         jlbtexto.setText("!Desea Cambiar nombre¡");
+        getContentPane().add(jlbtexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 17, -1, 22));
 
         jbno.setText("NO");
         jbno.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +66,7 @@ public class ElegirNombre extends javax.swing.JFrame {
                 jbnoActionPerformed(evt);
             }
         });
+        getContentPane().add(jbno, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 63, -1, -1));
 
         jbsi.setText("SI");
         jbsi.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +74,7 @@ public class ElegirNombre extends javax.swing.JFrame {
                 jbsiActionPerformed(evt);
             }
         });
+        getContentPane().add(jbsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 63, -1, -1));
 
         batalla.setText("Iniciar Batalla");
         batalla.addActionListener(new java.awt.event.ActionListener() {
@@ -73,43 +82,10 @@ public class ElegirNombre extends javax.swing.JFrame {
                 batallaActionPerformed(evt);
             }
         });
+        getContentPane().add(batalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 97, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addComponent(jlbtexto)
-                .addGap(18, 18, 18)
-                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(jbno)
-                .addGap(88, 88, 88)
-                .addComponent(jbsi)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(batalla)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlbtexto, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbno)
-                    .addComponent(jbsi))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(batalla)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pokemon texto_opt (1).png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 130));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,36 +144,42 @@ public class ElegirNombre extends javax.swing.JFrame {
         
        if(jbtMujer.isSelected() && pok1.isSelected()){
            entrenador.setVisible(true);
+           this.dispose();
           
             //entrenador.txt1.setText(a);   //obtiene el texto que se inserta en a            
             
             
         }else if(jbtMujer.isSelected() && pok2.isSelected()){   
             entrenador3.setVisible(true);
+            this.dispose();
             //entrenador3.txt2.setText(a);
             
             
             
         }else if (jbtMujer.isSelected() && pok3.isSelected()){
             entrenador2.setVisible(true);
+            this.dispose();
             //entrenador2.txt2.setText(a);
             
             
             
         }else if (jbtVaron.isSelected() && pok1.isSelected()){
             entrenador4.setVisible(true);
+            this.dispose();
             //entrenador4.txt2.setText(a);
             
             
             
         }else if (jbtVaron.isSelected() && pok2.isSelected()){
             entrenador5.setVisible(true);
+            this.dispose();
             //entrenador6.txt2.setText(a);
             
             
             
         }else if(jbtVaron.isSelected() && pok3.isSelected()){
             entrenador6.setVisible(true);
+            this.dispose();
             //entrenador5.txt2.setText(a);*/
             
         }
@@ -240,6 +222,7 @@ public class ElegirNombre extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton batalla;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jbno;
     private javax.swing.JToggleButton jbsi;
     private javax.swing.JLabel jlbtexto;
