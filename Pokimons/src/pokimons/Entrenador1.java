@@ -280,6 +280,7 @@ void AnalizarSituacion() {
         if(jbrendirse.isSelected()){
             JOptionPane.showMessageDialog(null, jlb1.getText()+" se ha rendido.");
             jb1.setEnabled(false);
+            //4
         }
         
     }//GEN-LAST:event_jbrendirseActionPerformed
