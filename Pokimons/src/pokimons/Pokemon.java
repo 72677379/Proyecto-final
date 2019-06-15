@@ -34,10 +34,11 @@ public class Pokemon {
        
        if (critico <= 20){
             ataque = (int)(ataque*2);
-        }
-       else if  (probabilidad <= 15){
+        
+            if  (probabilidad <= 15){
             ataque = 0;
-        }
+            }
+       }
         
         contrincante.vida = contrincante.vida - ataque;
         
@@ -48,9 +49,10 @@ public class Pokemon {
         if (critico <= 20) {
             resultado = contrincante.nombre 
                     + " recibió un ataque crítico de " + ataque;
-        }
-        else if (probabilidad <= 15){
-            resultado = contrincante.nombre + " esquivo el ataque.";
+        
+                    if (probabilidad <= 15){
+                        resultado = contrincante.nombre + " esquivo el ataque.";
+                }
         }
         else {
             resultado = contrincante.nombre 
@@ -64,6 +66,17 @@ public class Pokemon {
         int HP = this.vida + 15;
         rival.vida =  HP;
         hp = rival.nombre + " ha usado poción, su vida aumenta a " + HP;
+        
+        if(rival.vida>=65){
+            rival.vida=65;
+                    
+        }
+        if(rival.vida >= 65){
+            hp = rival.nombre + " ha usado pocion, su vida es " + rival.vida;
+        }
+        else{
+            hp = rival.nombre + " ha usado pocion, su vida aumenta " + HP;
+        }
         return hp;
     
     /*String resultado = "";

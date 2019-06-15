@@ -66,6 +66,7 @@ public class Entrenador1 extends javax.swing.JFrame {
         vida2 = new javax.swing.JLabel();
         nivel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        Inicio = new javax.swing.JButton();
         jl123456 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -171,6 +172,14 @@ public class Entrenador1 extends javax.swing.JFrame {
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 74, 100, 20));
+
+        Inicio.setText("INICIO");
+        Inicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InicioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, -1, -1));
 
         jl123456.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo1.jpg"))); // NOI18N
         getContentPane().add(jl123456, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
@@ -380,6 +389,12 @@ void AnalizarSituacion() {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
+        Menu menu =new Menu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_InicioActionPerformed
     
            
     public static void main(String args[]) {
@@ -416,6 +431,7 @@ void AnalizarSituacion() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Area1;
+    public static javax.swing.JButton Inicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -8,8 +8,11 @@ package pokimons;
 //import java.applet.AudioClip;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import static pokimons.Entrenador1.txt1;
 import static pokimons.Entrenador1.vida1;
 import static pokimons.Entrenador2.jlb3;
+import static pokimons.Entrenador3.nivel1;
+import static pokimons.Entrenador3.nivel2;
 
 /**
  *
@@ -18,6 +21,7 @@ import static pokimons.Entrenador2.jlb3;
 public class Entrenador4 extends javax.swing.JFrame {
     Pokemon mipokemon = new Pokemon("Groudon");
     Pokemon rival = new Pokemon("Suicune");
+    int cont =0;
     /**
      * Creates new form Entrenador4
      */
@@ -25,6 +29,10 @@ public class Entrenador4 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);//codigo para poner en el medio
         setResizable(false);
+        vida1.setText(mipokemon.MostrarEstado());  //muestra en el frame la vida
+        vida2.setText(rival.MostrarEstado());
+        nivel1.setText(mipokemon.Nivel());
+        nivel2.setText(mipokemon.Nivel());
         /*AudioClip Sound;
         Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Sonido/Cancion.wav"));
         Sound.play();*/
@@ -57,6 +65,9 @@ public class Entrenador4 extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         vida1 = new javax.swing.JLabel();
         vida2 = new javax.swing.JLabel();
+        nivel1 = new javax.swing.JLabel();
+        nivel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,7 +77,7 @@ public class Entrenador4 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BATALLA");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 17, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ash_opt.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 103, -1, -1));
@@ -102,6 +113,8 @@ public class Entrenador4 extends javax.swing.JFrame {
 
         jlb4.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jlb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 81, 20));
+
+        txt2.setEditable(false);
         getContentPane().add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 100, -1));
 
         jbrendirse.setText("RENDIRSE");
@@ -149,6 +162,16 @@ public class Entrenador4 extends javax.swing.JFrame {
 
         vida2.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(vida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 110, 20));
+        getContentPane().add(nivel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 80, 30));
+        getContentPane().add(nivel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 80, 30));
+
+        jButton1.setText("INICIO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo1.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 500));
@@ -182,26 +205,31 @@ public class Entrenador4 extends javax.swing.JFrame {
     
     }
     private void jbatacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbatacarActionPerformed
-        double r1 = Math.random();
-        double r2 = Math.random();
+        mipokemon.nombre=txt2.getText();   //recibe el sobrenombre 
+       String resultado = mipokemon.Atacar(rival); //pokemon ataca rival
+       Area1.append(resultado+ "\n");
         
-        if (r1 > r2) {
-            String resultado = mipokemon.Atacar(rival);       
-            Area1.append(resultado + "\n");
-
-            String resultado2 = rival.Atacar(mipokemon);
-            Area1.append(resultado2 + "\n");
+        int pos = (int)(Math.random()*100);
+        if (cont < 3){
+            if (pos < 25 && rival.vida <= 40){
+                String resultado2 = rival.UsarPocion(rival);
+                Area1.append(resultado2 + "\n");
+                cont = cont + 1;
+            }
+            else{
+                String resultado2 = rival.Atacar(mipokemon);
+                Area1.append(resultado2 + "\n");
+            }
         }
         else {
             String resultado2 = rival.Atacar(mipokemon);
             Area1.append(resultado2 + "\n");
-            
-            String resultado = mipokemon.Atacar(rival);       
-            Area1.append(resultado + "\n");            
         }
         
-        vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
-        vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
+        
+        
+        vida1.setText(mipokemon.MostrarEstado());
+        vida2.setText(rival.MostrarEstado());
         
         AnalizarSituacion();
     }//GEN-LAST:event_jbatacarActionPerformed
@@ -215,25 +243,7 @@ public class Entrenador4 extends javax.swing.JFrame {
         
         
         
-        /*int pos = (int)(Math.random()*100);
-        if (cont < 3){
-            if (pos < 25 && rival.vida <= 40){
-                String resultado2 = rival.UsarPocion(rival);
-                Area1.append(resultado2 + "\n");
-                cont = cont + 1;
-            }
-            else{
-                String resultado2 = rival.Atacar(mipokemon);
-                Area1.append(resultado2 + "\n");
-            }
-        }
-        else {
-            String resultado2 = rival.Atacar(mipokemon);
-            Area1.append(resultado2 + "\n");
-        }
-        */
-        //vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
-        //vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
+       
             
               posion1.setBackground(new Color(255,251,32));
               posion1.setVisible(false);
@@ -241,13 +251,7 @@ public class Entrenador4 extends javax.swing.JFrame {
               
               AnalizarSituacion();
         
-        /*String most = "";
-        if(posion1.isSelected()){
-            mostrar=txt1.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
-            Area1.append(most);
-              posion1.setBackground(new Color(255,251,32));
-              posion1.setVisible(false);
-        }*/
+        
     }//GEN-LAST:event_posion1ActionPerformed
 
     private void posion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion2ActionPerformed
@@ -258,25 +262,7 @@ public class Entrenador4 extends javax.swing.JFrame {
         
         
         
-        /*int pos = (int)(Math.random()*100);
-        if (cont < 3){
-            if (pos < 25 && rival.vida <= 40){
-                String resultado2 = rival.UsarPocion(rival);
-                Area1.append(resultado2 + "\n");
-                cont = cont + 1;
-            }
-            else{
-                String resultado2 = rival.Atacar(mipokemon);
-                Area1.append(resultado2 + "\n");
-            }
-        }
-        else {
-            String resultado2 = rival.Atacar(mipokemon);
-            Area1.append(resultado2 + "\n");
-        }
-        */
-        //vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
-        //vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
+       
             
               posion2.setBackground(new Color(255,251,32));
               posion2.setVisible(false);
@@ -284,13 +270,7 @@ public class Entrenador4 extends javax.swing.JFrame {
               
               AnalizarSituacion();
         
-        /*String most = "";
-        if(posion1.isSelected()){
-            mostrar=txt1.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
-            Area1.append(most);
-              posion1.setBackground(new Color(255,251,32));
-              posion1.setVisible(false);
-        }*/
+        
     }//GEN-LAST:event_posion2ActionPerformed
 
     private void posion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posion3ActionPerformed
@@ -301,25 +281,7 @@ public class Entrenador4 extends javax.swing.JFrame {
         
         
         
-        /*int pos = (int)(Math.random()*100);
-        if (cont < 3){
-            if (pos < 25 && rival.vida <= 40){
-                String resultado2 = rival.UsarPocion(rival);
-                Area1.append(resultado2 + "\n");
-                cont = cont + 1;
-            }
-            else{
-                String resultado2 = rival.Atacar(mipokemon);
-                Area1.append(resultado2 + "\n");
-            }
-        }
-        else {
-            String resultado2 = rival.Atacar(mipokemon);
-            Area1.append(resultado2 + "\n");
-        }
-        */
-        //vida1.setText(mipokemon.MostrarEstado()+"\n"+"/"+mipokemon.getNombre());
-        //vida2.setText(rival.MostrarEstado()+"\n"+"/"+rival.getNombre());
+        
             
               posion3.setBackground(new Color(255,251,32));
               posion3.setVisible(false);
@@ -327,13 +289,7 @@ public class Entrenador4 extends javax.swing.JFrame {
               
               AnalizarSituacion();
         
-        /*String most = "";
-        if(posion1.isSelected()){
-            mostrar=txt1.getText()+" ha usado posion y su vida aumento en : "+mipokemon.usarHp()+"\n";
-            Area1.append(most);
-              posion1.setBackground(new Color(255,251,32));
-              posion1.setVisible(false);
-        }*/
+       
     }//GEN-LAST:event_posion3ActionPerformed
 
     private void jbrendirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbrendirseActionPerformed
@@ -349,6 +305,12 @@ public class Entrenador4 extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       Menu menu =new Menu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,6 +349,7 @@ public class Entrenador4 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Area1;
+    public static javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -399,6 +362,8 @@ public class Entrenador4 extends javax.swing.JFrame {
     private javax.swing.JButton jbatacar;
     private javax.swing.JToggleButton jbrendirse;
     public static javax.swing.JLabel jlb4;
+    public static javax.swing.JLabel nivel1;
+    public static javax.swing.JLabel nivel2;
     private javax.swing.JToggleButton posion1;
     private javax.swing.JToggleButton posion2;
     private javax.swing.JToggleButton posion3;
