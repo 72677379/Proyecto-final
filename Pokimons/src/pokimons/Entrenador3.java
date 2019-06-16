@@ -20,7 +20,7 @@ import static pokimons.Entrenador2.jlb3;
  */
 public class Entrenador3 extends javax.swing.JFrame {
     Pokemon mipokemon = new Pokemon("Sceptile");
-    Pokemon rival = new Pokemon("Suicune");
+    Pokemonrival rival = new Pokemonrival("Suicune");
     int cont =0;
     /**
      * Creates new form Entrenador3

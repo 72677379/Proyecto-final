@@ -19,7 +19,7 @@ import static pokimons.Entrenador1.vida1;
  */
 public class Entrenador2 extends javax.swing.JFrame {
     Pokemon mipokemon = new Pokemon("Suicune");
-    Pokemon rival = new Pokemon("Groudon");
+    Pokemonrival rival = new Pokemonrival("Groudon");
     int cont=0;
     /**
      * Creates new form Entrenador2
@@ -233,6 +233,7 @@ void AnalizarSituacion() {
         
         vida1.setText(mipokemon.MostrarEstado());
         vida2.setText(rival.MostrarEstado());
+        
         AnalizarSituacion();
     }//GEN-LAST:event_jb2ActionPerformed
 
@@ -375,7 +376,7 @@ void AnalizarSituacion() {
     private javax.swing.JToggleButton posion3;
     public static javax.swing.JTextField txt2;
     private javax.swing.JLabel vida1;
-    private javax.swing.JLabel vida2;
+    public static javax.swing.JLabel vida2;
     // End of variables declaration//GEN-END:variables
 
     void isVisible(boolean b) {

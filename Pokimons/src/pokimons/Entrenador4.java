@@ -20,7 +20,7 @@ import static pokimons.Entrenador3.nivel2;
  */
 public class Entrenador4 extends javax.swing.JFrame {
     Pokemon mipokemon = new Pokemon("Groudon");
-    Pokemon rival = new Pokemon("Suicune");
+    Pokemonrival rival = new Pokemonrival("Suicune");
     int cont =0;
     /**
      * Creates new form Entrenador4

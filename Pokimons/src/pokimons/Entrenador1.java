@@ -7,6 +7,7 @@ package pokimons;
 
 //import java.applet.AudioClip;
 import java.awt.Color;
+import java.util.HashSet;
 import javax.swing.JOptionPane;
 
 /**
